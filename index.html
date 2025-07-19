@@ -15,7 +15,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
       :root {
-        --primary: #52357B ;
+        --primary: #52357b;
         --primary-dark: #1a6e52;
         --secondary: #67ae6e;
         --accent: #90c67c;
@@ -431,8 +431,6 @@
         font-size: 1.1rem;
       }
 
-      
-
       /* Marquee Section */
       .solutions-marquee {
         background: linear-gradient(
@@ -462,7 +460,6 @@
       }
 
       .marquee-item {
-        
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -1073,8 +1070,6 @@
       </div>
     </section>
 
-  
-
     <!-- Solutions Marquee -->
     <section class="solutions-marquee">
       <div class="marquee-container">
@@ -1197,6 +1192,493 @@
         </div>
       </div>
     </section>
+
+    <!-- Our Products Section - Clean White Layout with Hover Effects -->
+    <section id="products" class="products-screenshot-style">
+      <div class="section-container">
+        <div class="lab-products-header">
+          <h2>LABORATORY</h2>
+          <h3>MULTESTING TOWNSTATE</h3>
+        </div>
+
+        <div class="products-grid-screenshot">
+          <!-- Column 1 -->
+          <div class="product-column">
+            <div class="product-item">
+              <span class="product-name">TEXTILE</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">LEATHER</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">LIGHTBOOTH TOWNSTATE</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">SHETRONYOGNETS</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">BALANCES</span>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="product-column">
+            <div class="product-item">
+              <span class="product-name">WATER ANALYSIS</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">TENTANTS</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">TEMPREETURE SKIN</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">DIMENTION</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">WASHINGTON</span>
+            </div>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="product-column">
+            <div class="product-item">
+              <span class="product-name">CAMPAIGN</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">VISCOME TER</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">JOURNAL</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">MOTSTRUCTURE</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">NECORDING</span>
+            </div>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="product-column">
+            <div class="product-item">
+              <span class="product-name">ELECTRICAL HANDLES</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">MICROSCOPE SECTION</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">KITCHEN TRADERS</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">MATERIAL</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">TESTING COMPRENT</span>
+            </div>
+          </div>
+
+          <!-- Column 5 -->
+          <div class="product-column">
+            <div class="product-item">
+              <span class="product-name">FORCE</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">TESTING EQUIPMENT</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">TOROUE</span>
+            </div>
+            <div class="product-item">
+              <span class="product-name">TEMPREETURE</span>
+            </div>
+            <!-- Empty item to balance columns -->
+            <div class="product-item empty-item"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Clean White Color Scheme with Hover Effects */
+      .products-screenshot-style {
+        background: white;
+        padding: 4rem 2rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .lab-products-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .lab-products-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: black;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+      }
+
+      .lab-products-header h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .products-grid-screenshot {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .product-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        flex: 1;
+        min-width: 200px;
+        max-width: 200px;
+      }
+
+      .product-item {
+        background: white;
+        padding: 1.25rem 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #e0e0e0;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .product-item:hover {
+        background: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-item:hover .product-name {
+        color: white;
+      }
+
+      .empty-item {
+        visibility: hidden;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+      }
+
+      .product-name {
+        color: black;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        word-wrap: break-word;
+        width: 100%;
+        padding: 0 5px;
+        transition: color 0.3s ease;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .product-column {
+          min-width: 180px;
+          max-width: 180px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .products-grid-screenshot {
+          gap: 1rem;
+        }
+
+        .product-column {
+          min-width: 160px;
+          max-width: 160px;
+        }
+
+        .product-name {
+          font-size: 0.85rem;
+        }
+
+        .product-item {
+          height: 75px;
+          padding: 1rem 0.5rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .products-screenshot-style {
+          padding: 3rem 1rem;
+        }
+
+        .lab-products-header h2 {
+          font-size: 2rem;
+        }
+
+        .product-column {
+          min-width: 140px;
+          max-width: 140px;
+        }
+
+        .product-item {
+          height: 70px;
+          padding: 0.8rem 0.3rem;
+        }
+
+        .product-name {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+
+    <!-- Careers Section -->
+    <section id="careers" class="careers">
+      <div class="section-container">
+        <h2 class="section-title">Careers at Bernatali Inventions</h2>
+        <div class="careers-content">
+          <p class="section-description">
+            At Bernatali Inventions, we believe that our people are the
+            foundation of our success. We are committed to creating a workplace
+            where integrity, professionalism, and respect define how we
+            operate—both internally and with our clients and partners.
+          </p>
+
+          <div class="values-grid">
+            <!-- Our Values -->
+            <div class="value-card" data-aos="fade-up">
+              <div class="value-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>Our Values</h3>
+              <p>
+                Integrity and ethics are at the heart of everything we do. We
+                uphold the highest standards of conduct, fully aligned with
+                legal, regulatory, and industry best practices. We expect every
+                team member to act with honesty, fairness, and responsibility.
+              </p>
+            </div>
+
+            <!-- Culture of Growth -->
+            <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="value-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <h3>A Culture of Growth</h3>
+              <p>
+                We foster an inclusive and supportive environment where every
+                employee is empowered to grow, learn, and thrive. Through clear
+                policies and open communication, we ensure fair treatment and
+                equal opportunities for all—free from discrimination or bias.
+              </p>
+            </div>
+
+            <!-- Empowering Excellence -->
+            <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="value-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <h3>Empowering Excellence</h3>
+              <p>
+                We invest in our people by offering meaningful development
+                opportunities, professional training, and mentorship. Individual
+                achievements are recognized and celebrated, contributing not
+                only to personal growth but also to our collective success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision-mission" class="vision-mission">
+      <div class="section-container">
+        <div class="vision-mission-grid">
+          <!-- Vision -->
+          <div class="vm-card" data-aos="fade-right">
+            <h2 class="section-title">Our Vision</h2>
+            <div class="vm-content">
+              <p>
+                To become a trusted partner in scientific innovation by
+                delivering high-quality laboratory solutions, empowering
+                research, education, and industry with reliable instruments,
+                expert support, and innovative lab environments.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mission -->
+          <div class="vm-card" data-aos="fade-left">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="vm-content">
+              <p>
+                At BerNatali Inventions, our mission is to support scientific
+                progress by:
+              </p>
+              <ul class="mission-list">
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  Providing advanced, reliable laboratory instruments and
+                  technologies
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  Delivering exceptional after-sales service that ensures
+                  long-term value and performance
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  Supplying high-purity chemicals and essential lab consumables
+                  with consistency and care
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  Designing modern, efficient, and safe laboratory spaces
+                  tailored to our clients' needs
+                </li>
+              </ul>
+              <p class="mission-conclusion">
+                We are committed to building lasting partnerships through
+                integrity, expertise, and a relentless focus on customer
+                satisfaction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Careers Section Styling */
+      .careers {
+        background: var(--white);
+        padding: 6rem 2rem;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .value-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border-top: 4px solid var(--primary);
+      }
+
+      .value-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .value-icon {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .value-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      /* Vision & Mission Section Styling */
+      .vision-mission {
+        background: var(--gray-light);
+        padding: 6rem 2rem;
+      }
+
+      .vision-mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .vm-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+      }
+
+      .vm-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: linear-gradient(to bottom, var(--primary), var(--accent));
+        transition: var(--transition);
+        z-index: -1;
+      }
+
+      .vm-card:hover::before {
+        height: 100%;
+        width: 100%;
+        opacity: 0.1;
+      }
+
+      .mission-list {
+        margin: 1.5rem 0;
+        list-style: none;
+      }
+
+      .mission-list li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .mission-list i {
+        color: var(--accent);
+        margin-top: 0.25rem;
+      }
+
+      .mission-conclusion {
+        font-weight: 500;
+        color: var(--primary-dark);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .vision-mission-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .careers,
+        .vision-mission {
+          padding: 4rem 1.5rem;
+        }
+
+        .value-card,
+        .vm-card {
+          padding: 1.5rem;
+        }
+      }
+    </style>
 
     <!-- our services-->
     <section class="portfolio" id="portfolio">
@@ -1331,6 +1813,245 @@
       </div>
     </section>
 
+    <!-- Careers Section -->
+    <section id="careers" class="careers-section">
+      <div class="section-container">
+        
+
+        <h2 class="section-title">Careers at Bernatali</h2>
+        <p class="section-description">
+          Join our team of innovators and help shape the future of laboratory
+          technology.
+        </p>
+
+        <div class="careers-content">
+          <div class="careers-intro">
+            <div class="intro-card" data-aos="fade-up">
+              <p>
+                At Bernatali, integrity and ethics are core to how we operate.
+                We expect our team to uphold the highest standards in every
+                aspect of business, fully aligned with legal and industry
+                standards.
+              </p>
+            </div>
+
+            <div class="careers-highlight">
+              <div
+                class="highlight-card"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="highlight-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3>Our People</h3>
+                <p>
+                  Our people are essential to our success. We're committed to
+                  fostering a work environment where everyone has the support
+                  and resources to excel. Through clear policies, we ensure fair
+                  treatment and equal opportunity for all, without bias.
+                </p>
+              </div>
+
+              <div
+                class="highlight-card"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="highlight-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Growth & Recognition</h3>
+                <p>
+                  We're dedicated to helping employees develop their skills and
+                  reach their potential, with recognition and rewards for
+                  achievements at both personal and corporate levels.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          
+
+          
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Careers Section Styles */
+      .careers-section {
+        background: var(--white);
+        padding: 6rem 2rem;
+        position: relative;
+      }
+
+      .breadcrumb {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-light);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .breadcrumb .divider {
+        color: var(--primary);
+      }
+
+      .careers-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .careers-intro {
+        flex: 2;
+        min-width: 300px;
+      }
+
+      .intro-card {
+        background: var(--gray-light);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 2rem;
+        border-left: 4px solid var(--primary);
+        transition: var(--transition);
+      }
+
+      .intro-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .careers-highlight {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .highlight-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .highlight-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: linear-gradient(to bottom, var(--primary), var(--accent));
+        transition: var(--transition);
+        z-index: 1;
+      }
+
+      .highlight-card:hover::before {
+        height: 100%;
+        width: 100%;
+        opacity: 0.1;
+      }
+
+      .highlight-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .highlight-icon {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .highlight-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .careers-cta {
+        width: 100%;
+        background: var(--gray-light);
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .careers-cta p {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .careers-meta {
+        flex: 1;
+        min-width: 250px;
+        background: var(--gray-light);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        align-self: flex-start;
+        border-top: 4px solid var(--secondary);
+      }
+
+      .meta-item {
+        margin-bottom: 1.5rem;
+      }
+
+      .meta-label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        color: var(--primary);
+        font-size: 0.9rem;
+      }
+
+      .meta-value {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .careers-content {
+          flex-direction: column;
+        }
+
+        .careers-meta {
+          width: 100%;
+          margin-top: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .careers-section {
+          padding: 4rem 1.5rem;
+        }
+
+        .highlight-card {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .careers-cta p {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+
     <!-- Contact Section -->
     <section id="contact">
       <div class="section-container">
@@ -1428,24 +2149,35 @@
           <h3>Services</h3>
           <ul class="footer-links">
             <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Microscopy Solutions</a>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Microscopy Solutions</a
+              >
             </li>
             <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Analytical Chemistry</a>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Analytical Chemistry</a
+              >
             </li>
             <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Molecular Biology</a>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Molecular Biology</a
+              >
             </li>
             <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Lab Automation</a>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Lab Automation</a
+              >
             </li>
             <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Research Equipment</a>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Research Equipment</a
+              >
             </li>
             <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Microscopy Solutions</a>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Microscopy Solutions</a
+              >
             </li>
-            
           </ul>
         </div>
 
