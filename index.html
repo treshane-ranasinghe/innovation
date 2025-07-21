@@ -82,13 +82,11 @@
       }
 
       .nav-container {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        position: relative;
+        height: 80px; /* optional */
       }
 
       .logo {
@@ -102,19 +100,31 @@
         transition: var(--transition);
       }
 
-      .logo:hover {
-        color: var(--primary-dark);
+      .logo-img {
+        height: 120px; /* Adjust based on your needs */
+        width: auto; /* Maintain aspect ratio */
+        transition: var(--transition);
+        margin-top: 20px !important;
+        margin-left: 180px !important;
       }
 
-      .logo-icon {
-        font-size: 1.8rem;
-        color: var(--accent);
+      /* Optional: Add hover effect */
+      .logo:hover .logo-img {
+        transform: scale(1.05);
+        opacity: 0.9;
       }
 
       .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         gap: 1.5rem;
         list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        margin-top: 20px !important;
       }
 
       .nav-links a {
@@ -446,8 +456,6 @@
         overflow: hidden;
         position: relative;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        
-        
       }
 
       .marquee-container {
@@ -998,18 +1006,7 @@
         }
       }
 
-      .logo-img {
-        height: 120px; /* Adjust based on your needs */
-        width: auto; /* Maintain aspect ratio */
-        transition: var(--transition);
-        margin-top: -20px !important;
-      }
-
-      /* Optional: Add hover effect */
-      .logo:hover .logo-img {
-        transform: scale(1.05);
-        opacity: 0.9;
-      }
+      
     </style>
   </head>
   <body>
@@ -1820,8 +1817,6 @@
     <!-- Careers Section -->
     <section id="careers" class="careers-section">
       <div class="section-container">
-        
-
         <h2 class="section-title">Careers at Bernatali</h2>
         <p class="section-description">
           Join our team of innovators and help shape the future of laboratory
@@ -1874,10 +1869,6 @@
               </div>
             </div>
           </div>
-
-          
-
-          
         </div>
       </div>
     </section>
