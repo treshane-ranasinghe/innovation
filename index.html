@@ -167,6 +167,35 @@
         z-index: 1001;
       }
 
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* Hide by default on mobile */
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transform: none;
+          background-color: white;
+          width: 100%;
+          padding: 1rem 0;
+          box-shadow: var(--shadow-md);
+          z-index: 999;
+          align-items: center;
+        }
+
+        .nav-links.show {
+          display: flex; /* Show when active */
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
       /* Hero Section */
       .hero {
         display: flex;
@@ -1005,8 +1034,6 @@
           padding: 1.5rem;
         }
       }
-
-      
     </style>
   </head>
   <body>
@@ -2241,7 +2268,7 @@
       const navLinks = document.getElementById("navLinks");
 
       mobileMenuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        navLinks.classList.toggle("show");
         mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
           ? '<i class="fas fa-times"></i>'
           : '<i class="fas fa-bars"></i>';
@@ -2250,7 +2277,7 @@
       // Close mobile menu when clicking a link
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
+          navLinks.classList.remove("show");
           mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
       });
