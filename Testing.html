@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary: #52357b;
+        --primary-dark: #1a6e52;
+        --secondary: #67ae6e;
+        --accent: #90c67c;
+        --accent-light: #b8e0a8;
+        --background: #f5f9f0;
+        --text: #2d3748;
+        --text-light: #4a5568;
+        --white: #ffffff;
+        --gray-light: #f8fafc;
+        --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+        --border-radius: 12px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background-color: var(--accent);
+        color: var(--white);
+      }
+
+      /* Header & Navigation */
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: var(--shadow-sm);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transform: translateY(0);
+        transition: var(--transition);
+        height: 110px;
+      }
+
+      header.scrolled {
+        box-shadow: var(--shadow-md);
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      header.hidden {
+        transform: translateY(-100%);
+      }
+
+      .nav-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px; /* optional */
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .logo-img {
+        height: 120px; /* Adjust based on your needs */
+        width: auto; /* Maintain aspect ratio */
+        transition: var(--transition);
+        margin-top: 20px !important;
+        margin-left: 180px !important;
+      }
+
+      /* Optional: Add hover effect */
+      .logo:hover .logo-img {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        margin-top: 20px !important;
+      }
+
+      .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+        transition: var(--transition);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* Hide by default on mobile */
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transform: none;
+          background-color: white;
+          width: 100%;
+          padding: 1rem 0;
+          box-shadow: var(--shadow-md);
+          z-index: 999;
+          align-items: center;
+        }
+
+        .nav-links.show {
+          display: flex; /* Show when active */
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
+      .nav-links li {
+        position: relative;
+      }
+
+      .nav-links .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1b1b1b;
+        padding: 1rem;
+        list-style: none;
+        border-radius: 0 0 8px 8px;
+        min-width: 200px;
+        z-index: 999;
+      }
+
+      .nav-links .dropdown li {
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-links .dropdown li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav-links li:hover .dropdown {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="nav-container">
+        <a href="#home" class="logo">
+          <img src="images/logo.png" alt="Company Logo" class="logo-img" />
+        </a>
+
+        <button
+          class="mobile-menu-btn"
+          id="mobileMenuBtn"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#services">Services</a>
+            <ul class="dropdown">
+              <li><a href="#laboratory">Laboratory Equipment</a></li>
+              <li><a href="#analytical">Analytical Instruments</a></li>
+              <li><a href="#medical">Medical Devices</a></li>
+              <li><a href="#pharma">Pharmaceutical Tools</a></li>
+              <li><a href="#testing">Petroleum Equipment</a></li>
+               <li><a href="#testing">Testing Equipment</a></li>
+            </ul>
+          </li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+  </body>
+</html>
