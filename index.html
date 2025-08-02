@@ -196,6 +196,36 @@
         }
       }
 
+      .nav-links li {
+        position: relative;
+      }
+
+      .nav-links .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1b1b1b;
+        padding: 1rem;
+        list-style: none;
+        border-radius: 0 0 8px 8px;
+        min-width: 200px;
+        z-index: 999;
+      }
+
+      .nav-links .dropdown li {
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-links .dropdown li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav-links li:hover .dropdown {
+        display: block;
+      }
+
       /* Hero Section */
       .hero {
         display: flex;
@@ -1054,17 +1084,30 @@
     <!-- Header -->
     <header id="header">
       <div class="nav-container">
-        <a href="#" class="logo">
+        <a href="#home" class="logo">
           <img src="images/logo.png" alt="Company Logo" class="logo-img" />
         </a>
 
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <button
+          class="mobile-menu-btn"
+          id="mobileMenuBtn"
+          aria-label="Toggle navigation"
+        >
           <i class="fas fa-bars"></i>
         </button>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#services">Services</a></li>
+          <li class="has-dropdown">
+            <a href="#services">Services</a>
+            <ul class="dropdown">
+              <li><a href="#laboratory">Laboratory Equipment</a></li>
+              <li><a href="#analytical">Analytical Instruments</a></li>
+              <li><a href="#medical">Medical Devices</a></li>
+              <li><a href="#pharma">Pharmaceutical Tools</a></li>
+              <li><a href="#testing">Testing Equipment</a></li>
+            </ul>
+          </li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -2186,7 +2229,8 @@
           <ul class="footer-links">
             <li>
               <a href="#"
-                ><i class="fas fa-chevron-right"></i> General Laboratory Equipment</a
+                ><i class="fas fa-chevron-right"></i> General Laboratory
+                Equipment</a
               >
             </li>
             <li>
@@ -2196,22 +2240,26 @@
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-chevron-right"></i> Life Sciences & Biotechnology Instruments</a
+                ><i class="fas fa-chevron-right"></i> Life Sciences &
+                Biotechnology Instruments</a
               >
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-chevron-right"></i> Material Testing & Physical Properties Instruments</a
+                ><i class="fas fa-chevron-right"></i> Material Testing &
+                Physical Properties Instruments</a
               >
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-chevron-right"></i> Environmental & Industrial Testing Instruments</a
+                ><i class="fas fa-chevron-right"></i> Environmental & Industrial
+                Testing Instruments</a
               >
             </li>
             <li>
               <a href="#"
-                ><i class="fas fa-chevron-right"></i> Sample Preparation Instruments</a
+                ><i class="fas fa-chevron-right"></i> Sample Preparation
+                Instruments</a
               >
             </li>
           </ul>
