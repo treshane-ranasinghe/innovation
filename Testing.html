@@ -238,29 +238,10 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-      }
-
-      .hero-bg-slider {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .hero-bg-slider .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        background-image: url("images/testing.jpg"); /* Your fixed background image */
         background-size: cover;
         background-position: center;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
-
-      .hero-bg-slider .slide.active {
-        opacity: 1;
+        background-repeat: no-repeat;
       }
 
       .hero-overlay {
@@ -426,38 +407,6 @@
         }
       }
 
-      .hero-bg-images {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      .hero-bg-images .bg-img {
-        position: absolute;
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 1rem;
-        opacity: 0.12;
-        transform: scale(1);
-        transition: none;
-      }
-
-      @keyframes zoomInOut {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-      }
-
       /* Section Base Styles */
       section {
         position: relative;
@@ -499,106 +448,6 @@
         margin: 0 auto 4rem;
         color: var(--text-light);
         font-size: 1.1rem;
-      }
-
-      /* Marquee Section */
-      .solutions-marquee {
-        background: linear-gradient(
-          145deg,
-          var(--secondary),
-          var(--primary-dark)
-        );
-        display: block;
-        margin: 0 !important;
-        padding-top: 0.1rem !important;
-        padding-bottom: 0.1rem;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      .marquee-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .marquee-track {
-        display: flex;
-        width: max-content;
-        animation: scroll 30s linear infinite;
-      }
-
-      .marquee-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 2rem 2rem;
-        color: var(--white);
-        font-weight: 500;
-        font-size: 1.1rem;
-        white-space: nowrap;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
-      }
-
-      .marquee-item i {
-        font-size: 1.5rem;
-        color: var(--accent-light);
-      }
-
-      .marquee-item:hover {
-        transform: scale(1.05);
-        color: var(--accent-light);
-      }
-
-      .marquee-item:hover i {
-        color: var(--white);
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      .marquee-container:hover .marquee-track {
-        animation-play-state: paused;
-      }
-
-      @media (max-width: 768px) {
-        .solutions-marquee {
-          padding-top: 1rem !important;
-          padding-bottom: 1rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .solutions-marquee {
-          padding-top: 2.1rem !important;
-          padding-bottom: 1.2rem;
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .marquee-item {
-          padding: 0 1.5rem;
-          font-size: 1rem;
-        }
-        .marquee-item i {
-          font-size: 1.2rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .marquee-item {
-          padding: 0 1rem;
-          font-size: 0.9rem;
-        }
       }
 
       /* Services */
@@ -1097,16 +946,15 @@
         </button>
 
         <ul class="nav-links" id="navLinks">
-          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li class="has-dropdown">
             <a href="#services">Services</a>
             <ul class="dropdown">
-              <li><a href="#laboratory">Laboratory Equipment</a></li>
-              <li><a href="#analytical">Analytical Instruments</a></li>
-              <li><a href="#medical">Medical Devices</a></li>
-              <li><a href="#pharma">Pharmaceutical Tools</a></li>
-              <li><a href="#testing">Petroleum Equipment</a></li>
-              <li><a href="#testing">Testing Equipment</a></li>
+              <li><a href="Laboratory.html">Laboratory Equipment</a></li>
+              <li><a href="Analytical.html">Analytical Instruments</a></li>
+              <li><a href="Medical.html">Medical Devices</a></li>
+              <li><a href="Pharmaceutical.html">Pharmaceutical Tools</a></li>
+              <li><a href="Testing.html">Testing Equipment</a></li>
             </ul>
           </li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -1117,29 +965,6 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <div class="hero-bg-slider">
-        <div
-          class="slide active"
-          style="background-image: url('images/image1.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/image2.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/image3.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/image4.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/image5.jpg')"
-        ></div>
-      </div>
-
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
@@ -1168,19 +993,19 @@
         <div class="portfolio-grid">
           <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
             <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Eco Brand Website"
+              src="images/healthcare-equipment.jpg"
+              alt="Healthcare Equipment"
               class="portfolio-img"
             />
             <div class="portfolio-overlay">
               <span class="portfolio-category">Healthcare</span>
-              <h3 class="portfolio-title">Eco Brand Website</h3>
+              <h3 class="portfolio-title">Medical Laboratory Equipment</h3>
               <p>
-                Full branding and website for a boutique eco brand with
-                e-commerce integration.
+                High-quality medical lab equipment for hospitals and research
+                facilities.
               </p>
               <a href="#" class="portfolio-link">
-                View Project
+                View Details
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1188,19 +1013,19 @@
 
           <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
             <img
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="WordPress Development"
+              src="images/water-testing.jpg"
+              alt="Water Testing Equipment"
               class="portfolio-img"
             />
             <div class="portfolio-overlay">
               <span class="portfolio-category">Water Testing</span>
-              <h3 class="portfolio-title">Custom WordPress Site</h3>
+              <h3 class="portfolio-title">Water Quality Analysis</h3>
               <p>
-                Custom WordPress development with blog and shop integration for
-                a sustainable brand.
+                Comprehensive water testing solutions for industrial and
+                municipal applications.
               </p>
               <a href="#" class="portfolio-link">
-                View Project
+                View Details
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1208,19 +1033,18 @@
 
           <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
             <img
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="WordPress Development"
+              src="images/engineering-equipment.jpg"
+              alt="Engineering Equipment"
               class="portfolio-img"
             />
             <div class="portfolio-overlay">
-              <span class="portfolio-category">Engineering Equipement</span>
-              <h3 class="portfolio-title">Custom WordPress Site</h3>
+              <span class="portfolio-category">Engineering Equipment</span>
+              <h3 class="portfolio-title">Precision Engineering Tools</h3>
               <p>
-                Custom WordPress development with blog and shop integration for
-                a sustainable brand.
+                Specialized equipment for engineering research and development.
               </p>
               <a href="#" class="portfolio-link">
-                View Project
+                View Details
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1228,19 +1052,19 @@
 
           <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
             <img
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="WordPress Development"
+              src="images/lab-equipment.jpg"
+              alt="Laboratory Equipment"
               class="portfolio-img"
             />
             <div class="portfolio-overlay">
-              <span class="portfolio-category">Laboratory Equpipment</span>
-              <h3 class="portfolio-title">Custom WordPress Site</h3>
+              <span class="portfolio-category">Laboratory Equipment</span>
+              <h3 class="portfolio-title">Research Lab Solutions</h3>
               <p>
-                Custom WordPress development with blog and shop integration for
-                a sustainable brand.
+                Complete laboratory equipment for scientific research and
+                analysis.
               </p>
               <a href="#" class="portfolio-link">
-                View Project
+                View Details
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1248,19 +1072,19 @@
 
           <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
             <img
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="WordPress Development"
+              src="images/lab-furniture.jpg"
+              alt="Lab Furniture"
               class="portfolio-img"
             />
             <div class="portfolio-overlay">
-              <span class="portfolio-category">lab furniture</span>
-              <h3 class="portfolio-title">Custom WordPress Site</h3>
+              <span class="portfolio-category">Lab Furniture</span>
+              <h3 class="portfolio-title">Ergonomic Lab Furniture</h3>
               <p>
-                Custom WordPress development with blog and shop integration for
-                a sustainable brand.
+                Custom-designed laboratory furniture for optimal workspace
+                efficiency.
               </p>
               <a href="#" class="portfolio-link">
-                View Project
+                View Details
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1268,19 +1092,19 @@
 
           <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
             <img
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Wellness Coach Landing Page"
+              src="images/analytical-equipment.jpg"
+              alt="Analytical Equipment"
               class="portfolio-img"
             />
             <div class="portfolio-overlay">
               <span class="portfolio-category">Analytical Equipment</span>
-              <h3 class="portfolio-title">Wellness Coach Landing Page</h3>
+              <h3 class="portfolio-title">Precision Analysis Tools</h3>
               <p>
-                High-converting landing page and lead capture system for a
-                wellness coach.
+                Advanced analytical instruments for accurate measurement and
+                testing.
               </p>
               <a href="#" class="portfolio-link">
-                View Project
+                View Details
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1288,8 +1112,6 @@
         </div>
       </div>
     </section>
-
-    
 
     <!-- Contact Section -->
     <section id="contact">
