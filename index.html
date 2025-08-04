@@ -209,7 +209,7 @@
         padding: 1rem;
         list-style: none;
         border-radius: 0 0 8px 8px;
-        min-width: 200px;
+        min-width: 250px;
         z-index: 999;
       }
 
@@ -499,106 +499,6 @@
         margin: 0 auto 4rem;
         color: var(--text-light);
         font-size: 1.1rem;
-      }
-
-      /* Marquee Section */
-      .solutions-marquee {
-        background: linear-gradient(
-          145deg,
-          var(--secondary),
-          var(--primary-dark)
-        );
-        display: block;
-        margin: 0 !important;
-        padding-top: 0.1rem !important;
-        padding-bottom: 0.1rem;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      .marquee-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .marquee-track {
-        display: flex;
-        width: max-content;
-        animation: scroll 30s linear infinite;
-      }
-
-      .marquee-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 2rem 2rem;
-        color: var(--white);
-        font-weight: 500;
-        font-size: 1.1rem;
-        white-space: nowrap;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
-      }
-
-      .marquee-item i {
-        font-size: 1.5rem;
-        color: var(--accent-light);
-      }
-
-      .marquee-item:hover {
-        transform: scale(1.05);
-        color: var(--accent-light);
-      }
-
-      .marquee-item:hover i {
-        color: var(--white);
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      .marquee-container:hover .marquee-track {
-        animation-play-state: paused;
-      }
-
-      @media (max-width: 768px) {
-        .solutions-marquee {
-          padding-top: 1rem !important;
-          padding-bottom: 1rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .solutions-marquee {
-          padding-top: 2.1rem !important;
-          padding-bottom: 1.2rem;
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .marquee-item {
-          padding: 0 1.5rem;
-          font-size: 1rem;
-        }
-        .marquee-item i {
-          font-size: 1.2rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .marquee-item {
-          padding: 0 1rem;
-          font-size: 0.9rem;
-        }
       }
 
       /* Services */
@@ -1109,7 +1009,7 @@
               <li><a href="Testing.html">Testing Equipment</a></li>
             </ul>
           </li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#careers">About Us</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -1164,72 +1064,226 @@
       </div>
     </section>
 
-    <!-- Solutions Marquee -->
+    <!-- Solutions Marquee Section with Clickable Categories -->
     <section class="solutions-marquee">
       <div class="marquee-container">
         <div class="marquee-track">
-          <div class="marquee-item">
+          <!-- Original Items with Links -->
+          <a href="microscopy-solutions.html" class="marquee-item">
             <i class="fas fa-microscope"></i>
             <span>Microscopy Solutions</span>
-          </div>
-          <div class="marquee-item">
+          </a>
+          <a href="analytical-chemistry.html" class="marquee-item">
             <i class="fas fa-vial"></i>
             <span>Analytical Chemistry</span>
-          </div>
-          <div class="marquee-item">
+          </a>
+          <a href="molecular-biology.html" class="marquee-item">
             <i class="fas fa-dna"></i>
             <span>Molecular Biology</span>
-          </div>
-          <div class="marquee-item">
+          </a>
+
+          <!-- New Categories with Links -->
+          <a href="analytical-equipment.html" class="marquee-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Analytical Equipment</span>
+          </a>
+          <a href="Laboratory.html" class="marquee-item">
+            <i class="fas fa-flask"></i>
+            <span>Laboratory Equipment</span>
+          </a>
+          <a href="medical-equipment.html" class="marquee-item">
+            <i class="fas fa-medkit"></i>
+            <span>Medical Equipment</span>
+          </a>
+          <a href="petroleum-equipment.html" class="marquee-item">
+            <i class="fas fa-gas-pump"></i>
+            <span>Petroleum Equipment</span>
+          </a>
+          <a href="pharmaceutical-equipment.html" class="marquee-item">
+            <i class="fas fa-pills"></i>
+            <span>Pharmaceutical Equipment</span>
+          </a>
+          <a href="Testing.html" class="marquee-item">
+            <i class="fas fa-check-double"></i>
+            <span>Testing Equipment</span>
+          </a>
+
+          <!-- Climate Control -->
+          <a href="climate-control.html" class="marquee-item">
             <i class="fas fa-temperature-low"></i>
             <span>Climate Control Systems</span>
-          </div>
-          <div class="marquee-item">
-            <i class="fas fa-prescription-bottle-alt"></i>
+          </a>
+          <a href="lab-automation.html" class="marquee-item">
+            <i class="fas fa-robot"></i>
             <span>Lab Automation</span>
-          </div>
-          <div class="marquee-item">
-            <i class="fas fa-flask"></i>
-            <span>Research Equipment</span>
-          </div>
-          <div class="marquee-item">
+          </a>
+          <a href="biosafety-solutions.html" class="marquee-item">
             <i class="fas fa-shield-virus"></i>
             <span>Biosafety Solutions</span>
-          </div>
-          <!-- Duplicate items for seamless looping -->
-          <div class="marquee-item">
+          </a>
+
+          <!-- Duplicates for seamless looping (with same links) -->
+          <a href="microscopy-solutions.html" class="marquee-item">
             <i class="fas fa-microscope"></i>
             <span>Microscopy Solutions</span>
-          </div>
-          <div class="marquee-item">
+          </a>
+          <a href="analytical-chemistry.html" class="marquee-item">
             <i class="fas fa-vial"></i>
             <span>Analytical Chemistry</span>
-          </div>
-          <div class="marquee-item">
+          </a>
+          <a href="molecular-biology.html" class="marquee-item">
             <i class="fas fa-dna"></i>
             <span>Molecular Biology</span>
-          </div>
-          <div class="marquee-item">
-            <i class="fas fa-temperature-low"></i>
-            <span>Climate Control Systems</span>
-          </div>
-          <div class="marquee-item">
-            <i class="fas fa-prescription-bottle-alt"></i>
-            <span>Lab Automation</span>
-          </div>
-          <div class="marquee-item">
+          </a>
+          <a href="analytical-equipment.html" class="marquee-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Analytical Equipment</span>
+          </a>
+          <a href="laboratory-equipment.html" class="marquee-item">
             <i class="fas fa-flask"></i>
-            <span>Research Equipment</span>
-          </div>
-          <div class="marquee-item">
-            <i class="fas fa-shield-virus"></i>
-            <span>Biosafety Solutions</span>
-          </div>
+            <span>Laboratory Equipment</span>
+          </a>
+          <a href="medical-equipment.html" class="marquee-item">
+            <i class="fas fa-medkit"></i>
+            <span>Medical Equipment</span>
+          </a>
+          <a href="petroleum-equipment.html" class="marquee-item">
+            <i class="fas fa-gas-pump"></i>
+            <span>Petroleum Equipment</span>
+          </a>
+          <a href="pharmaceutical-equipment.html" class="marquee-item">
+            <i class="fas fa-pills"></i>
+            <span>Pharmaceutical Equipment</span>
+          </a>
+          <a href="testing-equipment.html" class="marquee-item">
+            <i class="fas fa-check-double"></i>
+            <span>Testing Equipment</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <<!-- Our Products Section - Circular Layout with Background -->
+    <style>
+      /* Updated Marquee Styling for Clickable Items */
+      .solutions-marquee {
+        background: linear-gradient(
+          145deg,
+          var(--secondary),
+          var(--primary-dark)
+        );
+        padding: 1rem 0;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 30s linear infinite;
+        will-change: transform;
+      }
+
+      .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        color: var(--white);
+        font-weight: 500;
+        font-size: 1.1rem;
+        white-space: nowrap;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .marquee-item:hover {
+        transform: scale(1.05);
+        color: var(--accent-light);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .marquee-item i {
+        font-size: 1.5rem;
+        color: var(--accent-light);
+        transition: color 0.3s ease;
+      }
+
+      .marquee-item:hover i {
+        color: var(--white);
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .marquee-container:hover .marquee-track {
+        animation-play-state: paused;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .marquee-item {
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+        }
+        .marquee-item i {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .marquee-item {
+          padding: 0.6rem 1rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+
+    <script>
+      // Enhanced click handling with animation pause
+      document.addEventListener("DOMContentLoaded", function () {
+        const marqueeContainer = document.querySelector(".marquee-container");
+        const marqueeTrack = document.querySelector(".marquee-track");
+
+        // Pause animation on hover
+        marqueeContainer.addEventListener("mouseenter", function () {
+          marqueeTrack.style.animationPlayState = "paused";
+        });
+
+        marqueeContainer.addEventListener("mouseleave", function () {
+          marqueeTrack.style.animationPlayState = "running";
+        });
+
+        // Add click effect to items
+        const marqueeItems = document.querySelectorAll(".marquee-item");
+        marqueeItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            // Add click feedback
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "scale(1.05)";
+            }, 100);
+
+            // Note: The actual navigation will happen naturally via the anchor tag
+          });
+        });
+      });
+    </script>
+
+    <!-- Our Products Section - Circular Layout with Background -->
     <section id="products" class="products-circular-style">
       <div class="section-container">
         <div class="lab-products-header">
@@ -1470,7 +1524,7 @@
     <style>
       /* Circular Products Section with Background */
       .products-circular-style {
-        margin-top: -30px;
+        margin-top: -18px;
         padding: 6rem 0;
         position: relative;
         overflow: hidden;
