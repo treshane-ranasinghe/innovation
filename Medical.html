@@ -162,7 +162,35 @@
         z-index: 1001;
       }
 
-      /* Dropdown styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* Hide by default on mobile */
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transform: none;
+          background-color: white;
+          width: 100%;
+          padding: 1rem 0;
+          box-shadow: var(--shadow-md);
+          z-index: 999;
+          align-items: center;
+        }
+
+        .nav-links.show {
+          display: flex; /* Show when active */
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
       .nav-links li {
         position: relative;
       }
@@ -175,7 +203,7 @@
         background-color: #1b1b1b;
         padding: 1rem;
         list-style: none;
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        border-radius: 0 0 8px 8px;
         min-width: 250px;
         z-index: 999;
       }
@@ -185,53 +213,12 @@
       }
 
       .nav-links .dropdown li a {
-        color: var(--white);
+        color: #fff;
         text-decoration: none;
-        transition: var(--transition);
-      }
-
-      .nav-links .dropdown li a:hover {
-        color: var(--accent-light);
-        padding-left: 0.5rem;
       }
 
       .nav-links li:hover .dropdown {
         display: block;
-      }
-
-      @media (max-width: 992px) {
-        .nav-links {
-          position: fixed;
-          top: 0;
-          right: -100%;
-          width: 280px;
-          height: 100vh;
-          background: var(--white);
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 6rem 2rem 2rem;
-          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-          transition: var(--transition);
-          z-index: 1000;
-        }
-
-        .nav-links.active {
-          right: 0;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-        }
-
-        .nav-links .dropdown {
-          position: static;
-          background-color: transparent;
-          padding: 0.5rem 0 0 1rem;
-        }
-
-        .nav-links .dropdown li a {
-          color: var(--text);
-        }
       }
 
       /* Main Content Styles */
@@ -968,6 +955,54 @@
         window.scrollTo({
           top: 0,
           behavior: "smooth",
+        });
+      });
+
+      // Form submission
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        // Simulate form submission
+        submitBtn.innerHTML = "Sending...";
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            contactForm.reset();
+          }, 2000);
+        }, 1500);
+      });
+
+      // Active link highlighting
+      const sections = document.querySelectorAll("section");
+      const navItems = document.querySelectorAll(".nav-links a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach((item) => {
+          item.classList.remove("active");
+          if (item.getAttribute("href") === `#${current}`) {
+            item.classList.add("active");
+          }
         });
       });
     </script>

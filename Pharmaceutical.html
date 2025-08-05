@@ -50,6 +50,51 @@
         overflow-x: hidden;
       }
 
+      @media (max-width: 992px) {
+        .nav-links {
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: var(--white);
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 6rem 2rem 2rem;
+          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+          transition: var(--transition);
+          z-index: 1000;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links .dropdown {
+          display: none !important;
+          position: static;
+          width: 100%;
+          background-color: transparent;
+          padding: 0.5rem 0 0 1rem;
+          box-shadow: none;
+        }
+
+        .nav-links .dropdown.show {
+          display: block !important;
+        }
+
+        .nav-links .dropdown li {
+          margin-bottom: 0;
+        }
+
+        .nav-links .dropdown li a {
+          color: var(--text);
+          padding: 0.5rem 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+      }
+
       /* Header Styles */
       header {
         background: rgba(255, 255, 255, 0.95);
@@ -162,7 +207,35 @@
         z-index: 1001;
       }
 
-      /* Dropdown styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* Hide by default on mobile */
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transform: none;
+          background-color: white;
+          width: 100%;
+          padding: 1rem 0;
+          box-shadow: var(--shadow-md);
+          z-index: 999;
+          align-items: center;
+        }
+
+        .nav-links.show {
+          display: flex; /* Show when active */
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
       .nav-links li {
         position: relative;
       }
@@ -175,7 +248,7 @@
         background-color: #1b1b1b;
         padding: 1rem;
         list-style: none;
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        border-radius: 0 0 8px 8px;
         min-width: 250px;
         z-index: 999;
       }
@@ -185,55 +258,13 @@
       }
 
       .nav-links .dropdown li a {
-        color: var(--white);
+        color: #fff;
         text-decoration: none;
-        transition: var(--transition);
-      }
-
-      .nav-links .dropdown li a:hover {
-        color: var(--accent-light);
-        padding-left: 0.5rem;
       }
 
       .nav-links li:hover .dropdown {
         display: block;
       }
-
-      @media (max-width: 992px) {
-        .nav-links {
-          position: fixed;
-          top: 0;
-          right: -100%;
-          width: 280px;
-          height: 100vh;
-          background: var(--white);
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 6rem 2rem 2rem;
-          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-          transition: var(--transition);
-          z-index: 1000;
-        }
-
-        .nav-links.active {
-          right: 0;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-        }
-
-        .nav-links .dropdown {
-          position: static;
-          background-color: transparent;
-          padding: 0.5rem 0 0 1rem;
-        }
-
-        .nav-links .dropdown li a {
-          color: var(--text);
-        }
-      }
-
       /* Main Content Styles */
       main {
         padding-top: 110px; /* Account for fixed header */
@@ -458,31 +489,36 @@
         <button
           class="mobile-menu-btn"
           id="mobileMenuBtn"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <i class="fas fa-bars"></i>
         </button>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html">Home</a></li>
-          <li class="has-dropdown">
-            <a href="#services">Services</a>
-            <ul class="dropdown">
-              <li><a href="Laboratory.html">Laboratory Equipment</a></li>
-              <li><a href="Analytical.html">Analytical Instruments</a></li>
-              <li><a href="Medical.html">Medical Devices</a></li>
-              <li>
-                <a href="Pharmaceutical.html" class="active"
-                  >Pharmaceutical Tools</a
-                >
-              </li>
-              <li><a href="Testing.html">Testing Equipment</a></li>
-              <li><a href="Petroleum.html">Petroleum Testing</a></li>
-            </ul>
-          </li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li class="has-dropdown">
+              <a href="#services" aria-haspopup="true" aria-expanded="false"
+                >Services</a
+              >
+              <ul class="dropdown">
+                <li><a href="Laboratory.html">Laboratory Equipment</a></li>
+                <li><a href="Analytical.html">Analytical Instruments</a></li>
+                <li><a href="Medical.html">Medical Devices</a></li>
+                <li>
+                  <a href="Pharmaceutical.html" class="active"
+                    >Pharmaceutical Tools</a
+                  >
+                </li>
+                <li><a href="Testing.html">Testing Equipment</a></li>
+                <li><a href="Petroleum.html">Petroleum Testing</a></li>
+              </ul>
+            </li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -877,6 +913,78 @@
         font-size: 0.9rem;
       }
     </style>
+    <style>
+      /* Mobile Menu Styles */
+      @media (max-width: 992px) {
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: var(--white);
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 6rem 2rem 2rem;
+          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+          transition: right 0.3s ease-in-out;
+          z-index: 1000;
+          overflow-y: auto;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links .dropdown {
+          display: none;
+          position: static;
+          width: 100%;
+          background-color: transparent;
+          padding: 0;
+          margin: 0;
+          box-shadow: none;
+        }
+
+        .nav-links .dropdown.show {
+          display: block;
+        }
+
+        .nav-links .dropdown li {
+          margin: 0;
+        }
+
+        .nav-links .dropdown li a {
+          padding: 0.5rem 1rem;
+          color: var(--text);
+        }
+
+        .mobile-menu-btn {
+          display: block;
+          z-index: 1001;
+        }
+
+        body.menu-open {
+          overflow: hidden;
+        }
+      }
+
+      #mobile-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 80%;
+        background-color: white;
+        z-index: 1000;
+      }
+
+      #mobile-menu.open {
+        transform: translateX(0);
+      }
+    </style>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       // Initialize AOS (Animate On Scroll)
@@ -887,12 +995,12 @@
         offset: 100,
       });
 
-      // Mobile menu toggle
+      // Mobile Menu Toggle
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
       const navLinks = document.getElementById("navLinks");
 
       mobileMenuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        navLinks.classList.toggle("show");
         mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
           ? '<i class="fas fa-times"></i>'
           : '<i class="fas fa-bars"></i>';
@@ -901,10 +1009,11 @@
       // Close mobile menu when clicking a link
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
+          navLinks.classList.remove("show");
           mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
       });
+
       // Header scroll effect
       const header = document.getElementById("header");
       let lastScroll = 0;
@@ -956,6 +1065,54 @@
         window.scrollTo({
           top: 0,
           behavior: "smooth",
+        });
+      });
+
+      // Form submission
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        // Simulate form submission
+        submitBtn.innerHTML = "Sending...";
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            contactForm.reset();
+          }, 2000);
+        }, 1500);
+      });
+
+      // Active link highlighting
+      const sections = document.querySelectorAll("section");
+      const navItems = document.querySelectorAll(".nav-links a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach((item) => {
+          item.classList.remove("active");
+          if (item.getAttribute("href") === `#${current}`) {
+            item.classList.add("active");
+          }
         });
       });
     </script>
