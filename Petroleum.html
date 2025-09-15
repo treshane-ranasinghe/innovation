@@ -434,6 +434,96 @@
           font-size: 0.9rem;
         }
       }
+      /* WhatsApp Icon Styles */
+      .whatsapp-icon {
+        position: absolute;
+        top: 25px;
+        right: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: var(--transition);
+        z-index: 1001;
+      }
+
+      .whatsapp-icon:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Optional: Add a tooltip on hover */
+      .whatsapp-icon::after {
+        content: "Contact us on WhatsApp";
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #333;
+        color: white;
+        font-size: 0.75rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+
+      .whatsapp-icon:hover::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Rest of the existing CSS code remains the same */
+
+      /* ... (all other existing styles) ... */
+
+      /* Media Query Adjustments for WhatsApp Icon */
+      @media (max-width: 1200px) {
+        .whatsapp-icon {
+          right: 120px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .whatsapp-icon {
+          right: 100px;
+          width: 40px;
+          height: 40px;
+          font-size: 1.3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-icon {
+          right: 70px;
+          top: 20px;
+          width: 35px;
+          height: 35px;
+          font-size: 1.1rem;
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .whatsapp-icon {
+          right: 50px;
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -442,6 +532,15 @@
       <div class="nav-container">
         <a href="index.html" class="logo">
           <img src="images/logo.png" alt="Company Logo" class="logo-img" />
+        </a>
+
+        <!-- WhatsApp Icon -->
+        <a
+          href="https://wa.me/94771804337"
+          target="_blank"
+          class="whatsapp-icon"
+        >
+          <i class="fab fa-whatsapp"></i>
         </a>
 
         <button
@@ -746,19 +845,22 @@
           <h3>Contact Info</h3>
           <ul class="footer-links">
             <li>
-              <a href="#"
-                ><i class="fas fa-map-marker-alt"></i> No: 547 Kreedapitiya Mavatha. Tewatte Road, Ragama 11010, Sri Lanka</a
-              >
+              <a href="#">
+                <i class="fas fa-map-marker-alt"></i> No: 547 Kreedapitiya
+                Mavatha. Tewatte Road, Ragama 11010, Sri Lanka
+              </a>
             </li>
             <li>
-              <a href="mailto:hello@greensite.com"
-                ><i class="fas fa-envelope">tharaka@bernatali.com</i></a
-              >
+              <a href="mailto:tharaka@bernatali.com">
+                <i class="fas fa-envelope"></i> tharaka@bernatali.com
+              </a>
             </li>
             <li>
-              <a href="tel:+1234567890"
-                ><i class="fas fa-phone"></i> +94 77 180 4337</a
-              >
+              
+              </a>
+            </li>
+            <li>
+              
             </li>
           </ul>
         </div>
