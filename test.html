@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artisan Woodcrafts | Handmade Wood Products</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+      }
+
+      :root {
+          --primary: #3A6B35;
+          --primary-dark: #284925;
+          --secondary: #D9A565;
+          --accent: #A65221;
+          --light: #F8F5F0;
+          --dark: #2C2721;
+          --gray: #6B7280;
+          --light-gray: #F3F4F6;
+      }
+
+      body {
+          background-color: var(--light);
+          color: var(--dark);
+          line-height: 1.6;
+          overflow-x: hidden;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+          background-color: white;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          position: sticky;
+          top: 0;
+          z-index: 100;
+      }
+
+      .header-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 0;
+      }
+
+      .logo {
+          font-size: 24px;
+          font-weight: 700;
+          color: var(--primary);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+          transform: scale(1.05);
+      }
+
+      .logo i {
+          color: var(--secondary);
+      }
+
+      nav ul {
+          display: flex;
+          list-style: none;
+          gap: 30px;
+      }
+
+      nav a {
+          text-decoration: none;
+          color: var(--dark);
+          font-weight: 500;
+          transition: all 0.3s ease;
+          position: relative;
+          padding: 5px 0;
+      }
+
+      nav a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: var(--primary);
+          transition: width 0.3s ease;
+      }
+
+      nav a:hover {
+          color: var(--primary);
+      }
+
+      nav a:hover::after {
+          width: 100%;
+      }
+
+      .header-actions {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+      }
+
+      .search-bar {
+          display: flex;
+          align-items: center;
+          background: var(--light-gray);
+          border-radius: 50px;
+          padding: 8px 15px;
+          transition: all 0.3s ease;
+      }
+
+      .search-bar:focus-within {
+          box-shadow: 0 0 0 2px var(--primary);
+          transform: scale(1.05);
+      }
+
+      .search-bar input {
+          border: none;
+          background: transparent;
+          outline: none;
+          margin-left: 8px;
+          width: 180px;
+      }
+
+      .icon-btn {
+          background: none;
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+          color: var(--dark);
+          position: relative;
+          transition: all 0.3s ease;
+          padding: 8px;
+          border-radius: 50%;
+      }
+
+      .icon-btn:hover {
+          background-color: var(--light-gray);
+          transform: translateY(-2px);
+      }
+
+      .cart-count {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background: var(--accent);
+          color: white;
+          font-size: 12px;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+      }
+
+      /* Hero Section */
+      .hero {
+          background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');
+          background-size: cover;
+          background-position: center;
+          color: white;
+          padding: 100px 0;
+          text-align: center;
+          margin-bottom: 60px;
+          position: relative;
+          overflow: hidden;
+      }
+
+      .hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 1;
+      }
+
+      .hero-content {
+          position: relative;
+          z-index: 2;
+          animation: fadeInUp 1s ease-out;
+      }
+
+      .hero h1 {
+          font-size: 48px;
+          margin-bottom: 20px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+          font-size: 20px;
+          max-width: 600px;
+          margin: 0 auto 30px;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .btn {
+          display: inline-block;
+          padding: 12px 30px;
+          background: var(--primary);
+          color: white;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          border: 2px solid var(--primary);
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+      }
+
+      .btn::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: var(--primary-dark);
+          transition: all 0.4s ease;
+          z-index: -1;
+      }
+
+      .btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:hover::before {
+          left: 0;
+      }
+
+      .btn-secondary {
+          background: transparent;
+          border: 2px solid white;
+      }
+
+      .btn-secondary::before {
+          background: white;
+      }
+
+      .btn-secondary:hover {
+          color: var(--primary);
+      }
+
+      /* Products Section */
+      .section-title {
+          text-align: center;
+          margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+          font-size: 36px;
+          color: var(--primary);
+          margin-bottom: 15px;
+          position: relative;
+          display: inline-block;
+      }
+
+      .section-title h2::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60px;
+          height: 3px;
+          background: var(--secondary);
+      }
+
+      .section-title p {
+          color: var(--gray);
+          max-width: 600px;
+          margin: 0 auto;
+      }
+
+      .filters {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          margin-bottom: 30px;
+          flex-wrap: wrap;
+      }
+
+      .filter-btn {
+          padding: 8px 20px;
+          background: white;
+          border: 1px solid var(--light-gray);
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+
+      .filter-btn.active, .filter-btn:hover {
+          background: var(--primary);
+          color: white;
+          border-color: var(--primary);
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .products-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 30px;
+          margin-bottom: 60px;
+      }
+
+      .product-card {
+          background: white;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+          transition: all 0.4s ease;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: popIn 0.6s forwards;
+      }
+
+      .product-card:nth-child(1) { animation-delay: 0.1s; }
+      .product-card:nth-child(2) { animation-delay: 0.2s; }
+      .product-card:nth-child(3) { animation-delay: 0.3s; }
+      .product-card:nth-child(4) { animation-delay: 0.4s; }
+      .product-card:nth-child(5) { animation-delay: 0.5s; }
+      .product-card:nth-child(6) { animation-delay: 0.6s; }
+      .product-card:nth-child(7) { animation-delay: 0.7s; }
+      .product-card:nth-child(8) { animation-delay: 0.8s; }
+
+      @keyframes popIn {
+          0% {
+              opacity: 0;
+              transform: translateY(20px) scale(0.9);
+          }
+          100% {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+          }
+      }
+
+      .product-card:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-image {
+          height: 200px;
+          width: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .product-image {
+          transform: scale(1.1);
+      }
+
+      .product-info {
+          padding: 20px;
+          position: relative;
+      }
+
+      .product-category {
+          color: var(--gray);
+          font-size: 14px;
+          margin-bottom: 5px;
+      }
+
+      .product-title {
+          font-size: 18px;
+          margin-bottom: 10px;
+          color: var(--dark);
+          transition: color 0.3s ease;
+      }
+
+      .product-card:hover .product-title {
+          color: var(--primary);
+      }
+
+      .product-price {
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--primary);
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+      }
+
+      .original-price {
+          text-decoration: line-through;
+          color: var(--gray);
+          font-size: 16px;
+          font-weight: 400;
+      }
+
+      .sale-badge {
+          position: absolute;
+          top: -10px;
+          right: 20px;
+          background: var(--accent);
+          color: white;
+          padding: 5px 10px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+      }
+
+      .product-actions {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+      }
+
+      .quick-view {
+          background: var(--light-gray);
+          border: none;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+
+      .quick-view:hover {
+          background: var(--secondary);
+          color: white;
+          transform: rotate(15deg);
+      }
+
+      /* Features Section */
+      .features {
+          background: white;
+          padding: 60px 0;
+          margin: 60px 0;
+      }
+
+      .features-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 40px;
+      }
+
+      .feature {
+          text-align: center;
+          padding: 0 20px;
+          transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+          transform: translateY(-10px);
+      }
+
+      .feature i {
+          font-size: 40px;
+          color: var(--primary);
+          margin-bottom: 20px;
+          background: var(--light);
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+      }
+
+      .feature:hover i {
+          background: var(--primary);
+          color: white;
+          transform: scale(1.1) rotate(5deg);
+      }
+
+      .feature h3 {
+          font-size: 20px;
+          margin-bottom: 15px;
+      }
+
+      /* Testimonials */
+      .testimonials {
+          padding: 60px 0;
+          background: var(--light);
+      }
+
+      .testimonial-slider {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 30px;
+          padding: 20px 0;
+          scrollbar-width: none;
+      }
+
+      .testimonial-slider::-webkit-scrollbar {
+          display: none;
+      }
+
+      .testimonial {
+          scroll-snap-align: start;
+          flex: 0 0 calc(33.333% - 20px);
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease;
+      }
+
+      .testimonial:hover {
+          transform: translateY(-5px);
+      }
+
+      .testimonial-text {
+          font-style: italic;
+          margin-bottom: 20px;
+          position: relative;
+      }
+
+      .testimonial-text::before {
+          content: """;
+          font-size: 60px;
+          color: var(--secondary);
+          position: absolute;
+          top: -20px;
+          left: -10px;
+          opacity: 0.2;
+      }
+
+      .testimonial-author {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+      }
+
+      .author-avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+      }
+
+      .author-details h4 {
+          font-size: 16px;
+          margin-bottom: 5px;
+      }
+
+      .author-details p {
+          font-size: 14px;
+          color: var(--gray);
+      }
+
+      /* Newsletter */
+      .newsletter-section {
+          background: linear-gradient(to right, var(--primary-dark), var(--primary));
+          color: white;
+          padding: 80px 0;
+          text-align: center;
+      }
+
+      .newsletter-content {
+          max-width: 600px;
+          margin: 0 auto;
+      }
+
+      .newsletter-form {
+          display: flex;
+          gap: 10px;
+          margin-top: 30px;
+          justify-content: center;
+      }
+
+      .newsletter-input {
+          flex: 1;
+          max-width: 350px;
+          padding: 15px 20px;
+          border: none;
+          border-radius: 50px;
+          font-size: 16px;
+      }
+
+      /* Footer */
+      footer {
+          background: var(--dark);
+          color: white;
+          padding: 60px 0 30px;
+      }
+
+      .footer-content {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 40px;
+          margin-bottom: 40px;
+      }
+
+      .footer-column h3 {
+          font-size: 18px;
+          margin-bottom: 20px;
+          color: var(--secondary);
+      }
+
+      .footer-column ul {
+          list-style: none;
+      }
+
+      .footer-column ul li {
+          margin-bottom: 10px;
+      }
+
+      .footer-column a {
+          color: #ccc;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          display: inline-block;
+      }
+
+      .footer-column a:hover {
+          color: var(--secondary);
+          transform: translateX(5px);
+      }
+
+      .newsletter input {
+          width: 100%;
+          padding: 12px;
+          border: none;
+          border-radius: 4px;
+          margin-bottom: 10px;
+      }
+
+      .social-links {
+          display: flex;
+          gap: 15px;
+          margin-top: 20px;
+      }
+
+      .social-links a {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
+          text-align: center;
+          line-height: 40px;
+          transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+          background: var(--primary);
+          transform: translateY(-5px);
+      }
+
+      .copyright {
+          text-align: center;
+          padding-top: 30px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          color: #ccc;
+          font-size: 14px;
+      }
+
+      /* Cart Sidebar */
+      .cart-sidebar {
+          position: fixed;
+          top: 0;
+          right: -400px;
+          width: 380px;
+          height: 100vh;
+          background: white;
+          box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+          transition: right 0.4s ease;
+          padding: 20px;
+          overflow-y: auto;
+      }
+
+      .cart-sidebar.open {
+          right: 0;
+      }
+
+      .overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.4s ease;
+      }
+
+      .overlay.active {
+          opacity: 1;
+          visibility: visible;
+      }
+
+      .cart-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 30px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid var(--light-gray);
+      }
+
+      .close-cart {
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+      }
+
+      .close-cart:hover {
+          transform: rotate(90deg);
+      }
+
+      .cart-items {
+          margin-bottom: 30px;
+      }
+
+      .cart-item {
+          display: flex;
+          gap: 15px;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid var(--light-gray);
+          animation: slideIn 0.3s ease;
+      }
+
+      @keyframes slideIn {
+          from {
+              opacity: 0;
+              transform: translateX(20px);
+          }
+          to {
+              opacity: 1;
+              transform: translateX(0);
+          }
+      }
+
+      .cart-item-image {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 8px;
+          transition: transform 0.3s ease;
+      }
+
+      .cart-item:hover .cart-item-image {
+          transform: scale(1.1);
+      }
+
+      .cart-item-details {
+          flex: 1;
+      }
+
+      .cart-item-title {
+          font-weight: 600;
+          margin-bottom: 5px;
+      }
+
+      .cart-item-price {
+          color: var(--primary);
+          font-weight: 700;
+          margin-bottom: 10px;
+      }
+
+      .cart-item-actions {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+      }
+
+      .quantity-btn {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          border: 1px solid var(--light-gray);
+          background: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+
+      .quantity-btn:hover {
+          background: var(--primary);
+          color: white;
+          border-color: var(--primary);
+      }
+
+      .cart-total {
+          font-size: 20px;
+          font-weight: 700;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+      }
+
+      .checkout-btn {
+          width: 100%;
+          padding: 15px;
+          background: var(--primary);
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+      }
+
+      .checkout-btn::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: var(--primary-dark);
+          transition: all 0.4s ease;
+          z-index: -1;
+      }
+
+      .checkout-btn:hover::before {
+          left: 0;
+      }
+
+      .checkout-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Quick View Modal */
+      .modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1001;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.4s ease;
+      }
+
+      .modal.active {
+          opacity: 1;
+          visibility: visible;
+      }
+
+      .modal-content {
+          background: white;
+          width: 90%;
+          max-width: 800px;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          transform: scale(0.9);
+          transition: transform 0.4s ease;
+      }
+
+      .modal.active .modal-content {
+          transform: scale(1);
+      }
+
+      .modal-image {
+          flex: 1;
+          background: var(--light);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 30px;
+      }
+
+      .modal-image img {
+          max-width: 100%;
+          max-height: 300px;
+          object-fit: contain;
+      }
+
+      .modal-details {
+          flex: 1;
+          padding: 30px;
+      }
+
+      .close-modal {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: none;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          color: white;
+          transition: transform 0.3s ease;
+      }
+
+      .close-modal:hover {
+          transform: rotate(90deg);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+          from {
+              opacity: 0;
+              transform: translateY(30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+          .header-content {
+              flex-direction: column;
+              gap: 20px;
+          }
+
+          nav ul {
+              gap: 15px;
+              flex-wrap: wrap;
+              justify-content: center;
+          }
+
+          .hero h1 {
+              font-size: 36px;
+          }
+
+          .hero p {
+              font-size: 18px;
+          }
+
+          .cart-sidebar {
+              width: 100%;
+              right: -100%;
+          }
+
+          .testimonial {
+              flex: 0 0 calc(100% - 20px);
+          }
+
+          .newsletter-form {
+              flex-direction: column;
+              align-items: center;
+          }
+
+          .modal-content {
+              flex-direction: column;
+              max-height: 90vh;
+              overflow-y: auto;
+          }
+
+          .modal-image {
+              padding: 20px;
+          }
+
+          .modal-details {
+              padding: 20px;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // React functional components with hooks
+      const { useState, useEffect, useRef } = React;
+
+      // Product data
+      const productsData = [
+        {
+          id: 1,
+          name: "Handcrafted Walnut Bowl",
+          price: 89.99,
+          originalPrice: 109.99,
+          category: "kitchen",
+          image:
+            "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Beautiful hand-turned walnut bowl perfect for fruit or salad. Each piece is unique with its own natural wood grain pattern.",
+          details:
+            'Made from sustainably sourced walnut. Finished with food-safe natural oil. Dimensions: 10" diameter x 4" height.',
+        },
+        {
+          id: 2,
+          name: "Oak Cutting Board",
+          price: 59.99,
+          category: "kitchen",
+          image:
+            "https://images.unsplash.com/photo-1563453399-8d6fca5e9a81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Durable oak cutting board with juice groove and handle. Perfect for food preparation and serving.",
+          details:
+            'Made from solid oak. Features a juice groove to catch liquids. Handle for easy carrying. Finished with food-safe mineral oil. Dimensions: 16" x 12" x 1.5".',
+        },
+        {
+          id: 3,
+          name: "Teak Serving Tray",
+          price: 75.0,
+          category: "serving",
+          image:
+            "https://images.unsplash.com/photo-1598705300085-2e13a61f5b7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Elegant teak serving tray with handles for easy carrying. Perfect for breakfast in bed or entertaining guests.",
+          details:
+            'Made from high-quality teak wood. Features convenient handles for carrying. Smooth finish. Dimensions: 20" x 14" x 2".',
+        },
+        {
+          id: 4,
+          name: "Maple Cheese Board",
+          price: 65.0,
+          originalPrice: 79.99,
+          category: "serving",
+          image:
+            "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Beautiful maple cheese board with built-in knife storage. Perfect for cheese lovers and entertaining.",
+          details:
+            'Made from hard maple. Includes storage slot for cheese knife. Finished with food-safe beeswax. Dimensions: 18" x 8" x 0.75".',
+        },
+        {
+          id: 5,
+          name: "Live Edge Coffee Table",
+          price: 899.99,
+          category: "furniture",
+          image:
+            "https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Stunning live edge coffee table with steel legs. A conversation piece for any living room.",
+          details:
+            'Tabletop made from solid walnut with natural live edge. Steel hairpin legs. Finished with durable polyurethane. Dimensions: 48" x 24" x 18".',
+        },
+        {
+          id: 6,
+          name: "Wooden Desk Organizer",
+          price: 45.0,
+          category: "office",
+          image:
+            "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Handcrafted desk organizer with compartments for all your supplies. Keep your workspace tidy and stylish.",
+          details:
+            'Made from cherry wood. Multiple compartments for pens, paper, and other desk items. Finished with natural oil. Dimensions: 12" x 6" x 3".',
+        },
+        {
+          id: 7,
+          name: "Cherry Wood Clock",
+          price: 120.0,
+          category: "decor",
+          image:
+            "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Elegant cherry wood wall clock with silent movement. A functional piece of art for your home.",
+          details:
+            'Made from solid cherry wood. Quartz movement with silent sweep hand. Roman numerals. Requires 1 AA battery (not included). Dimensions: 16" diameter.',
+        },
+        {
+          id: 8,
+          name: "Wooden Plant Stand",
+          price: 85.0,
+          category: "decor",
+          image:
+            "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          description:
+            "Mid-century modern plant stand for your indoor greenery. Show off your favorite plants in style.",
+          details:
+            'Made from solid oak. Mid-century design. Sturdy construction. Finished with protective varnish. Dimensions: 15" x 15" x 24".',
+        },
+      ];
+
+      // Testimonials data
+      const testimonialsData = [
+        {
+          id: 1,
+          text: "The walnut bowl I purchased is even more beautiful in person. The craftsmanship is exceptional and it looks stunning on my dining table.",
+          author: "Sarah Johnson",
+          role: "Interior Designer",
+          avatar: "https://randomuser.me/api/portraits/women/43.jpg",
+        },
+        {
+          id: 2,
+          text: "I've bought several pieces from Artisan Woodcrafts and they never disappoint. The quality is outstanding and each piece has its own unique character.",
+          author: "Michael Chen",
+          role: "Homeowner",
+          avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        },
+        {
+          id: 3,
+          text: "The live edge coffee table is the centerpiece of my living room. Everyone who visits comments on its beauty and craftsmanship.",
+          author: "Emma Rodriguez",
+          role: "Architect",
+          avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+        },
+      ];
+
+      // Header Component
+      const Header = ({ cartItems, toggleCart }) => {
+        const cartCount = cartItems.reduce(
+          (total, item) => total + item.quantity,
+          0
+        );
+
+        return (
+          <header>
+            <div className="container">
+              <div className="header-content">
+                <div className="logo">
+                  <i className="fas fa-tree"></i>
+                  <span>Artisan Woodcrafts</span>
+                </div>
+
+                <nav>
+                  <ul>
+                    <li>
+                      <a href="#">Home</a>
+                    </li>
+                    <li>
+                      <a href="#products">Shop</a>
+                    </li>
+                    <li>
+                      <a href="#">Collections</a>
+                    </li>
+                    <li>
+                      <a href="#">About</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+
+                <div className="header-actions">
+                  <div className="search-bar">
+                    <i className="fas fa-search"></i>
+                    <input type="text" placeholder="Search products..." />
+                  </div>
+
+                  <button className="icon-btn">
+                    <i className="fas fa-user"></i>
+                  </button>
+
+                  <button className="icon-btn" onClick={toggleCart}>
+                    <i className="fas fa-shopping-cart"></i>
+                    {cartCount > 0 && (
+                      <span className="cart-count">{cartCount}</span>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </header>
+        );
+      };
+
+      // Hero Component
+      const Hero = () => {
+        return (
+          <div className="hero">
+            <div className="container">
+              <div className="hero-content">
+                <h1>Handcrafted Wooden Masterpieces</h1>
+                <p>
+                  Discover our unique collection of artisan woodcrafts, made
+                  with precision and passion.
+                </p>
+                <div className="hero-buttons">
+                  <a href="#products" className="btn">
+                    Shop Now
+                  </a>
+                  <a href="#" className="btn btn-secondary">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+      // Product Card Component
+      const ProductCard = ({ product, addToCart, openQuickView }) => {
+        return (
+          <div className="product-card">
+            <div style={{ overflow: "hidden" }}>
+              <img
+                src={product.image}
+                alt={product.name}
+                className="product-image"
+              />
+            </div>
+            <div className="product-info">
+              <div className="product-category">{product.category}</div>
+              <h3 className="product-title">{product.name}</h3>
+              <div className="product-price">
+                ${product.price.toFixed(2)}
+                {product.originalPrice && (
+                  <span className="original-price">
+                    ${product.originalPrice.toFixed(2)}
+                  </span>
+                )}
+              </div>
+              {product.originalPrice && (
+                <span className="sale-badge">Sale</span>
+              )}
+              <div className="product-actions">
+                <button className="btn" onClick={() => addToCart(product)}>
+                  Add to Cart
+                </button>
+                <button
+                  className="quick-view"
+                  onClick={() => openQuickView(product)}
+                >
+                  <i className="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+      // Products Section Component
+      const Products = ({ addToCart, openQuickView }) => {
+        const [activeCategory, setActiveCategory] = useState("all");
+        const categories = [
+          "all",
+          "kitchen",
+          "serving",
+          "furniture",
+          "office",
+          "decor",
+        ];
+
+        const filteredProducts =
+          activeCategory === "all"
+            ? productsData
+            : productsData.filter(
+                (product) => product.category === activeCategory
+              );
+
+        return (
+          <section id="products" className="container">
+            <div className="section-title">
+              <h2>Our Products</h2>
+              <p>
+                Each piece is carefully crafted by skilled artisans using
+                sustainably sourced wood.
+              </p>
+            </div>
+
+            <div className="filters">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`filter-btn ${
+                    activeCategory === category ? "active" : ""
+                  }`}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))}
+            </div>
+
+            <div className="products-grid">
+              {filteredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  addToCart={addToCart}
+                  openQuickView={openQuickView}
+                />
+              ))}
+            </div>
+          </section>
+        );
+      };
+
+      // Features Component
+      const Features = () => {
+        const features = [
+          {
+            icon: "fas fa-truck",
+            title: "Free Shipping",
+            description: "Free shipping on orders over $100",
+          },
+          {
+            icon: "fas fa-leaf",
+            title: "Sustainable Sourcing",
+            description: "All wood is sustainably sourced and eco-friendly",
+          },
+          {
+            icon: "fas fa-medal",
+            title: "Quality Craftsmanship",
+            description:
+              "Handcrafted by skilled artisans with attention to detail",
+          },
+          {
+            icon: "fas fa-undo",
+            title: "Easy Returns",
+            description: "30-day money-back guarantee on all products",
+          },
+        ];
+
+        return (
+          <section className="features">
+            <div className="container">
+              <div className="features-grid">
+                {features.map((feature, index) => (
+                  <div key={index} className="feature">
+                    <i className={feature.icon}></i>
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      };
+
+      // Testimonials Component
+      const Testimonials = () => {
+        return (
+          <section className="testimonials">
+            <div className="container">
+              <div className="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>
+                  Don't just take our word for it - hear from our satisfied
+                  customers
+                </p>
+              </div>
+
+              <div className="testimonial-slider">
+                {testimonialsData.map((testimonial) => (
+                  <div key={testimonial.id} className="testimonial">
+                    <div className="testimonial-text">{testimonial.text}</div>
+                    <div className="testimonial-author">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.author}
+                        className="author-avatar"
+                      />
+                      <div className="author-details">
+                        <h4>{testimonial.author}</h4>
+                        <p>{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      };
+
+      // Newsletter Component
+      const Newsletter = () => {
+        const [email, setEmail] = useState("");
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          alert(
+            `Thank you for subscribing with ${email}! You'll receive our newsletter soon.`
+          );
+          setEmail("");
+        };
+
+        return (
+          <section className="newsletter-section">
+            <div className="container">
+              <div className="newsletter-content">
+                <h2>Join Our Newsletter</h2>
+                <p>
+                  Subscribe to get special offers, free giveaways, and new
+                  product alerts.
+                </p>
+
+                <form onSubmit={handleSubmit} className="newsletter-form">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    className="newsletter-input"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <button type="submit" className="btn">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+        );
+      };
+
+      // Footer Component
+      const Footer = () => {
+        return (
+          <footer>
+            <div className="container">
+              <div className="footer-content">
+                <div className="footer-column">
+                  <h3>Artisan Woodcrafts</h3>
+                  <p>
+                    Creating beautiful, handcrafted wood products for your home
+                    and life.
+                  </p>
+                  <div className="social-links">
+                    <a href="#">
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                      <i className="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                      <i className="fab fa-pinterest"></i>
+                    </a>
+                    <a href="#">
+                      <i className="fab fa-twitter"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="footer-column">
+                  <h3>Shop</h3>
+                  <ul>
+                    <li>
+                      <a href="#">All Products</a>
+                    </li>
+                    <li>
+                      <a href="#">Kitchenware</a>
+                    </li>
+                    <li>
+                      <a href="#">Home Decor</a>
+                    </li>
+                    <li>
+                      <a href="#">Furniture</a>
+                    </li>
+                    <li>
+                      <a href="#">Office Supplies</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="footer-column">
+                  <h3>Company</h3>
+                  <ul>
+                    <li>
+                      <a href="#">About Us</a>
+                    </li>
+                    <li>
+                      <a href="#">Our Story</a>
+                    </li>
+                    <li>
+                      <a href="#">Sustainability</a>
+                    </li>
+                    <li>
+                      <a href="#">Careers</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="footer-column">
+                  <h3>Customer Service</h3>
+                  <ul>
+                    <li>
+                      <a href="#">Shipping & Returns</a>
+                    </li>
+                    <li>
+                      <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                      <a href="#">Care Instructions</a>
+                    </li>
+                    <li>
+                      <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                      <a href="#">Terms of Service</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="copyright">
+                <p>&copy; 2023 Artisan Woodcrafts. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+        );
+      };
+
+      // Cart Sidebar Component
+      const CartSidebar = ({
+        isOpen,
+        toggleCart,
+        cartItems,
+        updateQuantity,
+        removeFromCart,
+      }) => {
+        const total = cartItems.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+
+        return (
+          <>
+            <div
+              className={`overlay ${isOpen ? "active" : ""}`}
+              onClick={toggleCart}
+            ></div>
+            <div className={`cart-sidebar ${isOpen ? "open" : ""}`}>
+              <div className="cart-header">
+                <h2>Your Cart</h2>
+                <button className="close-cart" onClick={toggleCart}>
+                  <i className="fas fa-times"></i>
+                </button>
+              </div>
+
+              <div className="cart-items">
+                {cartItems.length === 0 ? (
+                  <p>Your cart is empty</p>
+                ) : (
+                  cartItems.map((item) => (
+                    <div key={item.id} className="cart-item">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="cart-item-image"
+                      />
+                      <div className="cart-item-details">
+                        <h3 className="cart-item-title">{item.name}</h3>
+                        <p className="cart-item-price">
+                          ${item.price.toFixed(2)}
+                        </p>
+                        <div className="cart-item-actions">
+                          <button
+                            className="quantity-btn"
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity - 1)
+                            }
+                          >
+                            -
+                          </button>
+                          <span>{item.quantity}</span>
+                          <button
+                            className="quantity-btn"
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity + 1)
+                            }
+                          >
+                            +
+                          </button>
+                          <button
+                            className="icon-btn"
+                            onClick={() => removeFromCart(item.id)}
+                            style={{ marginLeft: "10px" }}
+                          >
+                            <i className="fas fa-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+
+              {cartItems.length > 0 && (
+                <>
+                  <div className="cart-total">
+                    <span>Total:</span>
+                    <span>${total.toFixed(2)}</span>
+                  </div>
+                  <button className="checkout-btn">Proceed to Checkout</button>
+                </>
+              )}
+            </div>
+          </>
+        );
+      };
+
+      // Quick View Modal Component
+      const QuickViewModal = ({ product, isOpen, closeModal, addToCart }) => {
+        if (!product) return null;
+
+        return (
+          <div className={`modal ${isOpen ? "active" : ""}`}>
+            <button className="close-modal" onClick={closeModal}>
+              <i className="fas fa-times"></i>
+            </button>
+            <div className="modal-content">
+              <div className="modal-image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <div className="modal-details">
+                <h2>{product.name}</h2>
+                <div className="product-price">
+                  ${product.price.toFixed(2)}
+                  {product.originalPrice && (
+                    <span className="original-price">
+                      ${product.originalPrice.toFixed(2)}
+                    </span>
+                  )}
+                </div>
+                <p>{product.description}</p>
+                <p>{product.details}</p>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    addToCart(product);
+                    closeModal();
+                  }}
+                  style={{ marginTop: "20px" }}
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+      // Main App Component
+      const App = () => {
+        const [cartItems, setCartItems] = useState([]);
+        const [isCartOpen, setIsCartOpen] = useState(false);
+        const [isModalOpen, setIsModalOpen] = useState(false);
+        const [selectedProduct, setSelectedProduct] = useState(null);
+
+        // Load cart from localStorage on initial render
+        useEffect(() => {
+          const savedCart = localStorage.getItem("woodcrafts_cart");
+          if (savedCart) {
+            setCartItems(JSON.parse(savedCart));
+          }
+        }, []);
+
+        // Save cart to localStorage whenever it changes
+        useEffect(() => {
+          localStorage.setItem("woodcrafts_cart", JSON.stringify(cartItems));
+        }, [cartItems]);
+
+        const addToCart = (product) => {
+          setCartItems((prevItems) => {
+            const existingItem = prevItems.find(
+              (item) => item.id === product.id
+            );
+
+            if (existingItem) {
+              return prevItems.map((item) =>
+                item.id === product.id
+                  ? { ...item, quantity: item.quantity + 1 }
+                  : item
+              );
+            } else {
+              return [...prevItems, { ...product, quantity: 1 }];
+            }
+          });
+        };
+
+        const updateQuantity = (productId, newQuantity) => {
+          if (newQuantity < 1) {
+            removeFromCart(productId);
+            return;
+          }
+
+          setCartItems((prevItems) =>
+            prevItems.map((item) =>
+              item.id === productId ? { ...item, quantity: newQuantity } : item
+            )
+          );
+        };
+
+        const removeFromCart = (productId) => {
+          setCartItems((prevItems) =>
+            prevItems.filter((item) => item.id !== productId)
+          );
+        };
+
+        const toggleCart = () => {
+          setIsCartOpen(!isCartOpen);
+        };
+
+        const openQuickView = (product) => {
+          setSelectedProduct(product);
+          setIsModalOpen(true);
+        };
+
+        const closeModal = () => {
+          setIsModalOpen(false);
+          setSelectedProduct(null);
+        };
+
+        return (
+          <div className="App">
+            <Header cartItems={cartItems} toggleCart={toggleCart} />
+            <Hero />
+            <Products addToCart={addToCart} openQuickView={openQuickView} />
+            <Features />
+            <Testimonials />
+            <Newsletter />
+            <Footer />
+            <CartSidebar
+              isOpen={isCartOpen}
+              toggleCart={toggleCart}
+              cartItems={cartItems}
+              updateQuantity={updateQuantity}
+              removeFromCart={removeFromCart}
+            />
+            <QuickViewModal
+              product={selectedProduct}
+              isOpen={isModalOpen}
+              closeModal={closeModal}
+              addToCart={addToCart}
+            />
+          </div>
+        );
+      };
+
+      // Render the App
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

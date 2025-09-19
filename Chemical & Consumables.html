@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chemicals & Lab Consumables | Bernatali Inventions</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #52357b;
+        --primary-dark: #1a6e52;
+        --secondary: #67ae6e;
+        --accent: #90c67c;
+        --accent-light: #b8e0a8;
+        --background: #f5f9f0;
+        --text: #2d3748;
+        --text-light: #4a5568;
+        --white: #ffffff;
+        --gray-light: #f8fafc;
+        --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+        --border-radius: 12px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      /* Header Styles */
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: var(--shadow-sm);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transform: translateY(0);
+        transition: var(--transition);
+        height: 110px;
+      }
+
+      header.scrolled {
+        box-shadow: var(--shadow-md);
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      header.hidden {
+        transform: translateY(-100%);
+      }
+
+      .nav-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .logo-img {
+        height: 120px;
+        width: auto;
+        transition: var(--transition);
+        margin-top: 20px !important;
+      }
+
+      .logo:hover .logo-img {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        margin-top: 20px !important;
+      }
+
+      .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+        transition: var(--transition);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* Hide by default on mobile */
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transform: none;
+          background-color: white;
+          width: 100%;
+          padding: 1rem 0;
+          box-shadow: var(--shadow-md);
+          z-index: 999;
+          align-items: center;
+        }
+
+        .nav-links.show {
+          display: flex; /* Show when active */
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
+      .nav-links li {
+        position: relative;
+      }
+
+      .nav-links .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1b1b1b;
+        padding: 1rem;
+        list-style: none;
+        border-radius: 0 0 8px 8px;
+        min-width: 250px;
+        z-index: 999;
+      }
+
+      .nav-links .dropdown li {
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-links .dropdown li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav-links li:hover .dropdown {
+        display: block;
+      }
+
+      /* Main Content Styles */
+      main {
+        padding-top: 110px; /* Account for fixed header */
+      }
+
+      /* Hero Banner */
+      .category-banner {
+        height: 50vh;
+        background-image: url("images/pexels-ivan-samkov-9629696.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .category-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .banner-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: var(--white);
+        padding: 0 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .banner-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .banner-content p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      /* Search Bar */
+      .search-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .search-bar {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .search-bar input {
+        flex: 1;
+        padding: 1rem;
+        border: 2px solid var(--primary);
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+        font-size: 1rem;
+        outline: none;
+        transition: var(--transition);
+      }
+
+      .search-bar input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(144, 198, 124, 0.3);
+      }
+
+      .search-bar button {
+        padding: 0 1.5rem;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .search-bar button:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Products Grid */
+      .products-container {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .product-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        border-top: 4px solid var(--accent);
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(144, 198, 124, 0.1),
+          transparent
+        );
+        z-index: 0;
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .product-card:hover::before {
+        opacity: 1;
+      }
+
+      .product-card h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Alphabet Navigation */
+      .alphabet-nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 2rem auto;
+        max-width: 800px;
+      }
+
+      .alphabet-link {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: var(--white);
+        border-radius: 50%;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .alphabet-link:hover,
+      .alphabet-link.active {
+        background: var(--primary);
+        color: var(--white);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .banner-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .banner-content h1 {
+          font-size: 2rem;
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .alphabet-link {
+          width: 35px;
+          height: 35px;
+          line-height: 35px;
+          font-size: 0.9rem;
+        }
+      }
+      /* WhatsApp Icon Styles */
+      .whatsapp-icon {
+        position: absolute;
+        top: 25px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: var(--transition);
+        z-index: 1001;
+      }
+
+      .whatsapp-icon:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Optional: Add a tooltip on hover */
+      .whatsapp-icon::after {
+        content: "Contact us on WhatsApp";
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #333;
+        color: white;
+        font-size: 0.75rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+
+      .whatsapp-icon:hover::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Rest of the existing CSS code remains the same */
+
+      /* ... (all other existing styles) ... */
+
+      /* Media Query Adjustments for WhatsApp Icon */
+      @media (max-width: 1200px) {
+        .whatsapp-icon {
+          right: 120px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .whatsapp-icon {
+          right: 100px;
+          width: 40px;
+          height: 40px;
+          font-size: 1.3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-icon {
+          right: 70px;
+          top: 20px;
+          width: 35px;
+          height: 35px;
+          font-size: 1.1rem;
+        }
+
+        .logo-img {
+          margin-left: 0 !important;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .whatsapp-icon {
+          right: 50px;
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Company Logo" class="logo-img" />
+        </a>
+
+        <!-- WhatsApp Icon -->
+        <a
+          href="https://wa.me/94771804337"
+          target="_blank"
+          class="whatsapp-icon"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <button
+          class="mobile-menu-btn"
+          id="mobileMenuBtn"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#services">Services</a>
+            <ul class="dropdown">
+              <li><a href="Laboratory.html">Laboratory Equipment</a></li>
+              <li><a href="Analytical.html">Analytical Instruments</a></li>
+              <li><a href="Medical.html">Medical Devices</a></li>
+              <li><a href="Pharmaceutical.html">Pharmaceutical Tools</a></li>
+              <li><a href="Testing.html">Testing Equipment</a></li>
+            </ul>
+          </li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- Category Banner -->
+      <section class="category-banner">
+        <div class="banner-content">
+          <h1>Chemicals & Lab Consumables</h1>
+          <p>Specialty chemicals and essential laboratory consumables</p>
+        </div>
+      </section>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search chemicals and consumables..."
+            id="searchInput"
+          />
+          <button type="button" id="searchButton">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Alphabet Navigation -->
+      <div class="alphabet-nav" id="alphabetNav"></div>
+
+      <!-- Products Grid -->
+      <div class="products-container">
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </main>
+
+    <script>
+      // Chemicals & Lab Consumables Data
+      const consumables = [
+        "Rare & Specialty Chemicals",
+        "Molecular Biology Regents",
+        "Quartz Ware",
+        "Teflon Ware",
+        "Silicon Products",
+        "Crucibles: Silica, Porcelain, Alumina, Quartz, etc.",
+        "NITRILE GLOVES",
+        "LINT-FREE TISSUE",
+        "TEM GRIDS",
+        "PARAFILM",
+        "AGATE MORTAR",
+        "SPATULAS",
+        "ITO & FTO GLASS",
+        "ALUMINA CRUCIBLES",
+        "QUARTZ & GLASS CUVETTE",
+        "GC & HPLC SYRINGES",
+        "SYRINGE FILTERS",
+        "SILICON & RUBBER SEPTUM",
+        "NMR TUBES",
+        "MEMBRANE FILTERS",
+        "DRY Solvents",
+        "HPLC Solvents",
+        "LCMS Solvents",
+      ];
+
+      // Generate Alphabet Navigation
+      function generateAlphabetNav() {
+        const alphabetNav = document.getElementById("alphabetNav");
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+        alphabet.forEach((letter) => {
+          const link = document.createElement("a");
+          link.href = `#${letter}`;
+          link.className = "alphabet-link";
+          link.textContent = letter;
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            filterByLetter(letter);
+          });
+          alphabetNav.appendChild(link);
+        });
+      }
+
+      // Filter products by starting letter
+      function filterByLetter(letter) {
+        const filtered = consumables.filter(
+          (item) => item.charAt(0).toUpperCase() === letter
+        );
+        displayProducts(filtered);
+        document.querySelectorAll(".alphabet-link").forEach((link) => {
+          link.classList.toggle("active", link.textContent === letter);
+        });
+      }
+
+      // Search products
+      function searchProducts(query) {
+        const results = consumables.filter((item) =>
+          item.toLowerCase().includes(query.toLowerCase())
+        );
+        displayProducts(results);
+      }
+
+      // Display products
+      function displayProducts(products) {
+        const productsGrid = document.getElementById("productsGrid");
+        productsGrid.innerHTML = "";
+
+        if (products.length === 0) {
+          productsGrid.innerHTML =
+            '<p class="no-results">No products found matching your search.</p>';
+          return;
+        }
+
+        products.forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+          const title = document.createElement("h3");
+          title.textContent = product;
+          card.appendChild(title);
+          productsGrid.appendChild(card);
+        });
+      }
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        generateAlphabetNav();
+        displayProducts(consumables);
+
+        document
+          .getElementById("searchButton")
+          .addEventListener("click", () => {
+            const query = document.getElementById("searchInput").value;
+            searchProducts(query);
+          });
+
+        document
+          .getElementById("searchInput")
+          .addEventListener("keyup", (e) => {
+            if (e.key === "Enter") {
+              const query = document.getElementById("searchInput").value;
+              searchProducts(query);
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
