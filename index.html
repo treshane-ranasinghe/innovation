@@ -167,20 +167,20 @@
         z-index: 1001;
       }
 
-      @media (max-width: 992px) {
+      @media (max-width: 768px) {
         .nav-links {
-          position: fixed;
-          top: 0;
-          left: -100%; /* Changed from right: -100% */
-          width: 280px;
-          height: 100vh;
-          background: var(--white);
+          display: none; /* Hide by default on mobile */
           flex-direction: column;
-          align-items: flex-start;
-          padding: 6rem 2rem 2rem;
-          box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1); /* Shadow on right side now */
-          transition: var(--transition);
-          z-index: 1000;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transform: none;
+          background-color: white;
+          width: 100%;
+          padding: 1rem 0;
+          box-shadow: var(--shadow-md);
+          z-index: 999;
+          align-items: center;
         }
 
         .nav-links.show {
@@ -2286,12 +2286,25 @@
         </p>
 
         <div class="contact-form" data-aos="fade-up">
-          <form id="contactForm">
+          <form
+            action="https://formsubmit.co/treshaneranasinghe123@gmail.com"
+            method="POST"
+          >
+            <!-- Add hidden inputs for customization -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Contact Form Submission"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
             <div class="form-group">
               <label for="name" class="form-label">Your Name</label>
               <input
                 type="text"
                 id="name"
+                name="name"
                 class="form-control"
                 placeholder="John Doe"
                 required
@@ -2303,6 +2316,7 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 class="form-control"
                 placeholder="john@example.com"
                 required
@@ -2313,6 +2327,7 @@
               <label for="message" class="form-label">Your Message</label>
               <textarea
                 id="message"
+                name="message"
                 class="form-control"
                 placeholder="Tell us about your project..."
                 required
