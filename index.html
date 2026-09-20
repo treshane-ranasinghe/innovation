@@ -2,2543 +2,563 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laboratory Equipment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08080f" />
+    <title>BN Inventions | Laboratory, Analytical &amp; Medical Equipment in Sri Lanka</title>
+    <meta name="description" content="Bernatali Inventions (Pvt) Ltd supplies laboratory, analytical, medical, pharmaceutical, petroleum and testing equipment across Sri Lanka, with maintenance, calibration, consumables and operator training." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BN Inventions" />
+    <meta property="og:title" content="BN Inventions | Laboratory, Analytical &amp; Medical Equipment in Sri Lanka" />
+    <meta property="og:description" content="Bernatali Inventions (Pvt) Ltd supplies laboratory, analytical, medical, pharmaceutical, petroleum and testing equipment across Sri Lanka, with maintenance, calibration, consumables and operator training." />
+    <meta property="og:image" content="https://bninventions.com/images/logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300..700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <style>
-      :root {
-        --primary: #52357b;
-        --primary-dark: #1a6e52;
-        --secondary: #67ae6e;
-        --accent: #90c67c;
-        --accent-light: #b8e0a8;
-        --background: #f5f9f0;
-        --text: #2d3748;
-        --text-light: #4a5568;
-        --white: #ffffff;
-        --gray-light: #f8fafc;
-        --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-        --border-radius: 12px;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        background: var(--background);
-        color: var(--text);
-        line-height: 1.7;
-        overflow-x: hidden;
-      }
-
-      ::selection {
-        background-color: var(--accent);
-        color: var(--white);
-      }
-
-      /* Header & Navigation */
-      header {
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: var(--shadow-sm);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        transform: translateY(0);
-        transition: var(--transition);
-        height: 110px;
-      }
-
-      header.scrolled {
-        box-shadow: var(--shadow-md);
-        background: rgba(255, 255, 255, 0.98);
-      }
-
-      header.hidden {
-        transform: translateY(-100%);
-      }
-
-      .nav-container {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 80px; /* optional */
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        text-decoration: none;
-        color: var(--primary);
-        font-weight: 700;
-        font-size: 1.5rem;
-        transition: var(--transition);
-      }
-
-      .logo-img {
-        height: 120px; /* Adjust based on your needs */
-        width: auto; /* Maintain aspect ratio */
-        transition: var(--transition);
-        margin-top: 20px !important;
-        margin-left: 180px !important;
-      }
-
-      /* Optional: Add hover effect */
-      .logo:hover .logo-img {
-        transform: scale(1.05);
-        opacity: 0.9;
-      }
-
-      .nav-links {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 1.5rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        align-items: center;
-        margin-top: 20px !important;
-      }
-
-      .nav-links a {
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 500;
-        position: relative;
-        padding: 0.5rem 0;
-        transition: var(--transition);
-      }
-
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--primary);
-        transition: var(--transition);
-      }
-
-      .nav-links a:hover::after,
-      .nav-links a.active::after {
-        width: 100%;
-      }
-
-      .nav-links a:hover,
-      .nav-links a.active {
-        color: var(--primary);
-      }
-
-      .mobile-menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--primary);
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 1001;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none; /* Hide by default on mobile */
-          flex-direction: column;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          transform: none;
-          background-color: white;
-          width: 100%;
-          padding: 1rem 0;
-          box-shadow: var(--shadow-md);
-          z-index: 999;
-          align-items: center;
-        }
-
-        .nav-links.show {
-          display: flex; /* Show when active */
-        }
-
-        .mobile-menu-btn {
-          display: block;
-        }
-
-        .logo-img {
-          margin-left: 0 !important;
-        }
-      }
-
-      .nav-links li {
-        position: relative;
-      }
-
-      .nav-links .dropdown {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #1b1b1b;
-        padding: 1rem;
-        list-style: none;
-        border-radius: 0 0 8px 8px;
-        min-width: 250px;
-        z-index: 999;
-      }
-
-      .nav-links .dropdown li {
-        margin-bottom: 0.5rem;
-      }
-
-      .nav-links .dropdown li a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      .nav-links li:hover .dropdown {
-        display: block;
-      }
-
-      /* Hero Section */
-      .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 90vh;
-        padding: 6rem 2rem 0rem !important;
-        margin-bottom: 0 !important;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-bg-slider {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .hero-bg-slider .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
-
-      .hero-bg-slider .slide.active {
-        opacity: 1;
-      }
-
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(144, 198, 124, 0.1) 0%,
-          rgba(255, 255, 255, 0) 70%
-        );
-        animation: pulse 15s infinite alternate;
-        z-index: 0;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(0.8);
-          opacity: 0.5;
-        }
-        100% {
-          transform: scale(1.2);
-          opacity: 0.8;
-        }
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .hero h2 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-        color: #ffffff;
-        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-        animation: fadeInUp 1s ease-out both;
-      }
-
-      .hero p {
-        font-size: clamp(1rem, 2vw, 1.25rem);
-        max-width: 700px;
-        margin: 0 auto 2.5rem;
-        color: var(--text-light);
-        animation: fadeInUp 1s ease-out 0.2s both;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        animation: fadeInUp 1s ease-out 0.4s both;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.875rem 2rem;
-        font-size: 1rem;
-        font-weight: 600;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        transition: var(--transition);
-        text-decoration: none;
-        border: none;
-        gap: 0.5rem;
-      }
-
-      .btn-primary {
-        background: var(--primary);
-        color: var(--white);
-        box-shadow: 0 4px 12px rgba(50, 142, 110, 0.3);
-      }
-
-      .btn-primary:hover {
-        background: var(--primary-dark);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(50, 142, 110, 0.4);
-      }
-
-      .btn-secondary {
-        background: var(--white);
-        color: var(--primary);
-        border: 2px solid var(--primary);
-      }
-
-      .btn-secondary:hover {
-        background: var(--primary-dark);
-        color: var(--white);
-        transform: translateY(-2px);
-      }
-
-      .hero-shapes {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        z-index: 0;
-      }
-
-      .shape {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.15;
-        filter: blur(40px);
-      }
-
-      .shape-1 {
-        width: 300px;
-        height: 300px;
-        background: var(--primary);
-        top: 10%;
-        left: 5%;
-        animation: float 8s ease-in-out infinite;
-      }
-
-      .shape-2 {
-        width: 400px;
-        height: 400px;
-        background: var(--secondary);
-        bottom: 10%;
-        right: 5%;
-        animation: float 10s ease-in-out infinite reverse;
-      }
-
-      .shape-3 {
-        width: 200px;
-        height: 200px;
-        background: var(--accent);
-        top: 50%;
-        left: 30%;
-        animation: float 12s ease-in-out infinite 2s;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0) translateX(0);
-        }
-        50% {
-          transform: translateY(-20px) translateX(20px);
-        }
-      }
-
-      .hero-bg-images {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      .hero-bg-images .bg-img {
-        position: absolute;
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 1rem;
-        opacity: 0.12;
-        transform: scale(1);
-        transition: none;
-      }
-
-      @keyframes zoomInOut {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-      }
-
-      /* Section Base Styles */
-      section {
-        position: relative;
-        padding: 4rem 2rem;
-        margin: 0;
-      }
-
-      .section-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .section-title {
-        font-size: clamp(1.75rem, 3vw, 2.5rem);
-        text-align: center;
-        margin-bottom: 2rem;
-        color: var(--primary);
-        position: relative;
-        display: inline-block;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .section-title::after {
-        content: "";
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(to right, var(--primary), var(--accent));
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 2px;
-      }
-
-      .section-description {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 4rem;
-        color: var(--text-light);
-        font-size: 1.1rem;
-      }
-
-      /* Services */
-      .services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .service-card {
-        background: var(--white);
-        border-radius: var(--border-radius);
-        padding: 2.5rem;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
-
-      .service-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 0;
-        background: linear-gradient(to bottom, var(--primary), var(--accent));
-        transition: var(--transition);
-        z-index: -1;
-      }
-
-      .service-card:hover::before {
-        height: 100%;
-        width: 100%;
-        opacity: 0.1;
-      }
-
-      .service-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .service-icon {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 1.5rem;
-        transition: var(--transition);
-      }
-
-      .service-card:hover .service-icon {
-        transform: scale(1.1);
-        color: var(--accent);
-      }
-
-      .service-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: var(--text);
-      }
-
-      .service-card p {
-        color: var(--text-light);
-        margin-bottom: 1.5rem;
-      }
-
-      .service-link {
-        display: inline-flex;
-        align-items: center;
-        color: var(--primary);
-        font-weight: 600;
-        text-decoration: none;
-        transition: var(--transition);
-      }
-
-      .service-link i {
-        margin-left: 0.5rem;
-        transition: var(--transition);
-      }
-
-      .service-link:hover {
-        color: var(--accent);
-      }
-
-      .service-link:hover i {
-        transform: translateX(4px);
-      }
-
-      /* Portfolio */
-      .portfolio {
-        background: var(--gray-light);
-      }
-
-      .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 2rem;
-      }
-
-      .portfolio-item {
-        position: relative;
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-        aspect-ratio: 16/9;
-      }
-
-      .portfolio-item:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .portfolio-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: var(--transition);
-      }
-
-      .portfolio-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-        padding: 2rem 1.5rem 1.5rem;
-        color: var(--white);
-        transform: translateY(100%);
-        transition: var(--transition);
-      }
-
-      .portfolio-item:hover .portfolio-overlay {
-        transform: translateY(0);
-      }
-
-      .portfolio-item:hover .portfolio-img {
-        transform: scale(1.05);
-      }
-
-      .portfolio-category {
-        display: inline-block;
-        background: var(--accent);
-        color: var(--white);
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .portfolio-title {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .portfolio-link {
-        display: inline-flex;
-        align-items: center;
-        color: var(--white);
-        font-weight: 600;
-        text-decoration: none;
-        margin-top: 0.5rem;
-        transition: var(--transition);
-      }
-
-      .portfolio-link i {
-        margin-left: 0.5rem;
-        transition: var(--transition);
-      }
-
-      .portfolio-link:hover {
-        color: var(--accent-light);
-      }
-
-      .portfolio-link:hover i {
-        transform: translateX(4px);
-      }
-
-      /* Contact */
-      .contact-form {
-        max-width: 600px;
-        margin: 0 auto;
-        background: var(--white);
-        padding: 3rem;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-      }
-
-      .contact-form:hover {
-        box-shadow: var(--shadow-md);
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-        position: relative;
-      }
-
-      .form-label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: var(--text);
-      }
-
-      .form-control {
-        width: 100%;
-        padding: 1rem;
-        border: 1px solid #e2e8f0;
-        border-radius: var(--border-radius);
-        font-family: inherit;
-        font-size: 1rem;
-        transition: var(--transition);
-        background: var(--gray-light);
-      }
-
-      .form-control:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(50, 142, 110, 0.2);
-        background: var(--white);
-      }
-
-      textarea.form-control {
-        min-height: 150px;
-        resize: vertical;
-      }
-
-      .submit-btn {
-        width: 100%;
-        padding: 1rem;
-        background: var(--primary);
-        color: var(--white);
-        border: none;
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-      }
-
-      .submit-btn:hover {
-        background: var(--primary-dark);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(50, 142, 110, 0.3);
-      }
-
-      .submit-btn i {
-        transition: var(--transition);
-      }
-
-      .submit-btn:hover i {
-        transform: translateX(4px);
-      }
-
-      /* Footer */
-      footer {
-        background: var(--primary);
-        color: var(--white);
-        padding: 4rem 2rem 2rem;
-        position: relative;
-      }
-
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 3rem;
-      }
-
-      .footer-col h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-        display: inline-block;
-      }
-
-      .footer-col h3::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background: var(--accent);
-      }
-
-      .footer-links {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 0.75rem;
-      }
-
-      .footer-links a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        transition: var(--transition);
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .footer-links a:hover {
-        color: var(--white);
-        transform: translateX(4px);
-      }
-
-      .footer-links a i {
-        font-size: 0.8rem;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
-      }
-
-      .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--white);
-        transition: var(--transition);
-      }
-
-      .social-links a:hover {
-        background: var(--accent);
-        transform: translateY(-3px);
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 3rem;
-        margin-top: 3rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.9rem;
-      }
-
-      /* Back to top button */
-      .back-to-top {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 50px;
-        height: 50px;
-        background: var(--primary);
-        color: var(--white);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.25rem;
-        box-shadow: var(--shadow-md);
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        z-index: 999;
-      }
-
-      .back-to-top.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .back-to-top:hover {
-        background: var(--primary-dark);
-        transform: translateY(-5px);
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .nav-links {
-          position: fixed;
-          top: 0;
-          right: -100%;
-          width: 280px;
-          height: 100vh;
-          background: var(--white);
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 6rem 2rem 2rem;
-          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-          transition: var(--transition);
-          z-index: 1000;
-        }
-
-        .nav-links.active {
-          right: 0;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-        }
-
-        .hero-buttons {
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .btn {
-          width: 100%;
-        }
-
-        .portfolio-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 768px) {
-        section {
-          padding: 4rem 1.5rem;
-        }
-
-        .service-card {
-          padding: 2rem;
-        }
-
-        .contact-form {
-          padding: 2rem;
-        }
-
-        .footer-container {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .nav-container {
-          padding: 1rem;
-        }
-
-        .hero {
-          padding: 6rem 1.5rem 4rem;
-        }
-
-        .hero h2 {
-          font-size: 2rem;
-        }
-
-        .service-card {
-          padding: 1.5rem;
-        }
-      }
-
-      /* WhatsApp Icon Styles */
-      .whatsapp-icon {
-        position: absolute;
-        top: 25px;
-        right: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        background-color: #25d366;
-        color: white;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: var(--transition);
-        z-index: 1001;
-      }
-
-      .whatsapp-icon:hover {
-        background-color: #128c7e;
-        transform: scale(1.1);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Optional: Add a tooltip on hover */
-      .whatsapp-icon::after {
-        content: "Contact us on WhatsApp";
-        position: absolute;
-        top: 100%;
-        right: 0;
-        margin-top: 10px;
-        padding: 5px 10px;
-        background-color: #333;
-        color: white;
-        font-size: 0.75rem;
-        border-radius: 4px;
-        white-space: nowrap;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-      }
-
-      .whatsapp-icon:hover::after {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      /* Rest of the existing CSS code remains the same */
-
-      /* ... (all other existing styles) ... */
-
-      /* Media Query Adjustments for WhatsApp Icon */
-      @media (max-width: 1200px) {
-        .whatsapp-icon {
-          right: 120px;
-        }
-      }
-
-      @media (max-width: 992px) {
-        .whatsapp-icon {
-          right: 100px;
-          width: 40px;
-          height: 40px;
-          font-size: 1.3rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .whatsapp-icon {
-          right: 70px;
-          top: 20px;
-          width: 35px;
-          height: 35px;
-          font-size: 1.1rem;
-        }
-
-        .logo-img {
-          margin-left: 0 !important;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .whatsapp-icon {
-          right: 50px;
-          width: 32px;
-          height: 32px;
-          font-size: 1rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Set before paint so scroll-reveal styles only apply when JS can undo them. -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Bernatali Inventions (Pvt) Ltd",
+        "alternateName": "BN Inventions",
+        "url": "https://bninventions.com/",
+        "logo": "https://bninventions.com/images/logo.png",
+        "email": "sales@bernatali.com",
+        "telephone": "+94771804337",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "No. 547 Kreedapitiya Mavatha, Tewatte Road",
+          "addressLocality": "Ragama",
+          "postalCode": "11010",
+          "addressCountry": "LK"
+        },
+        "description": "Supplier of laboratory, analytical, medical, pharmaceutical, petroleum and testing equipment in Sri Lanka, with maintenance, calibration, consumables and training."
+      }
+    </script>
   </head>
   <body>
-    <!-- Header -->
-    <header id="header">
-      <div class="nav-container">
-        <a href="#home" class="logo">
-          <img src="images/logo.png" alt="Company Logo" class="logo-img" />
+    <a class="skip-link" href="#main">Skip to content</a>
+    <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15m0 0-6-6m6 6-6 6"/></symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V5m0 0-6 6m6-6 6 6"/></symbol>
+        <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+        <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 7.1 5a2.5 2.5 0 0 0 2.8 0l7.1-5"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.6C3 13 11 21 19.4 21a1.5 1.5 0 0 0 1.6-1.5v-2a1.5 1.5 0 0 0-1.2-1.5l-2.6-.5a1.5 1.5 0 0 0-1.4.5l-1 1.1a13.6 13.6 0 0 1-5.4-5.4l1.1-1a1.5 1.5 0 0 0 .5-1.4l-.5-2.6A1.5 1.5 0 0 0 6.5 3Z"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3h5M10.5 3v6.2L4.8 18a2.2 2.2 0 0 0 1.9 3.3h10.6a2.2 2.2 0 0 0 1.9-3.3l-5.7-8.8V3"/><path d="M7.2 14.5h9.6"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v14.5A1.5 1.5 0 0 0 5.5 20H20"/><path d="m8 15 3.3-4.2 3 2.4L19 7"/></symbol>
+        <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12.5h3.6l2-5 3.4 10.5 2.4-7 1.7 3.5H21"/></symbol>
+        <symbol id="i-pill" viewBox="0 0 24 24"><rect x="2.6" y="8.2" width="18.8" height="7.6" rx="3.8" transform="rotate(-45 12 12)"/><path d="m9.2 9.2 5.6 5.6"/></symbol>
+        <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M4 21V5.5A2.5 2.5 0 0 1 6.5 3h4A2.5 2.5 0 0 1 13 5.5V21M3 21h11"/><path d="M13 10h3.6a2 2 0 0 1 2 2v4.6a1.9 1.9 0 0 0 3.8 0V9.4L19.6 6.6"/><path d="M6.6 8.4h3.8"/></symbol>
+        <symbol id="i-clipboard" viewBox="0 0 24 24"><path d="M9 4.5H7.5A2.5 2.5 0 0 0 5 7v12a2.5 2.5 0 0 0 2.5 2.5h9A2.5 2.5 0 0 0 19 19V7a2.5 2.5 0 0 0-2.5-2.5H15"/><rect x="9" y="2.5" width="6" height="4" rx="1.4"/><path d="m8.8 13.4 2 2 4.4-4.4"/></symbol>
+        <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.8s6.2 6 6.2 10.4a6.2 6.2 0 1 1-12.4 0C5.8 8.8 12 2.8 12 2.8Z"/><path d="M9.2 14.2a2.9 2.9 0 0 0 2.8 2.9"/></symbol>
+        <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M15.4 3.5a5.5 5.5 0 0 0-6.3 7.1L3.6 16a2 2 0 0 0 2.8 2.8l5.4-5.5a5.5 5.5 0 0 0 7.1-6.3L16 10l-2.6-.5L13 7l3.4-3.4Z"/></symbol>
+        <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 17.5a9 9 0 1 1 16 0"/><path d="m12 13.5 4-3.6"/><circle cx="12" cy="15" r="1.6"/></symbol>
+        <symbol id="i-graduation" viewBox="0 0 24 24"><path d="m12 4 9.5 4.4L12 12.8 2.5 8.4 12 4Z"/><path d="M6.5 10.8v4.6c0 1.9 2.5 3.4 5.5 3.4s5.5-1.5 5.5-3.4v-4.6"/><path d="M21.5 8.4v5.4"/></symbol>
+        <symbol id="i-blueprint" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.4"/><path d="M3 9.6h18M9.4 9.6V20M14 14.2h7"/></symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6.5h10.5v10H3zM13.5 10h3.9l2.6 3v3.5h-6.5z"/><circle cx="7" cy="18.5" r="1.8"/><circle cx="17" cy="18.5" r="1.8"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 4.5 6v6c0 4.6 3.2 7.9 7.5 9.2 4.3-1.3 7.5-4.6 7.5-9.2V6L12 2.8Z"/><path d="m9 12 2.2 2.2L15.2 10"/></symbol>
+        <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-7.5"/><path d="M12 13.5C12 9.9 14.9 7 18.5 7H21c0 3.6-2.9 6.5-6.5 6.5H12Z"/><path d="M12 13.5C12 10.7 9.7 8.4 6.9 8.4H4.5c0 2.8 2.3 5.1 5.1 5.1H12Z"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="m8.4 13.6-1.3 7 4.9-2.6 4.9 2.6-1.3-7"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9.5" cy="8" r="3.4"/><path d="M3.5 20a6 6 0 0 1 12 0"/><path d="M16.2 5.1a3.4 3.4 0 0 1 0 6.6M17.5 14.6a6 6 0 0 1 3 5.4"/></symbol>
+        <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3.5 16.5 5.5-5.5 3.4 3.4 7.6-7.6"/><path d="M15.4 6.8h5v5"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1"/></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3.1"/></symbol>
+        <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/></symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12" rx="1"/><circle cx="4" cy="4" r="2"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></symbol>
+      </defs>
+    </svg>
+    <header class="site-header" id="header">
+      <nav class="nav shell" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="BN Inventions — home">
+          <img class="brand__mark" src="images/logo-mark.png" alt="" width="42" height="42" />
+          <span class="brand__name"><b>BN Inventions</b><span>Bernatali (Pvt) Ltd</span></span>
         </a>
 
-        <!-- WhatsApp Icon -->
-        <a
-          href="https://wa.me/94771804337"
-          target="_blank"
-          class="whatsapp-icon"
-        >
-          <i class="fab fa-whatsapp"></i>
+        <ul class="nav__links" id="navLinks">
+          <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+          <li class="has-menu">
+            <a class="nav__link" href="#solutions" aria-haspopup="true">
+              Solutions <svg class="ico" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </a>
+            <div class="nav__menu">
+            <a href="Laboratory.html"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg><span>Laboratory Equipment</span><small>100</small></a>
+            <a href="Analytical.html"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg><span>Analytical Instruments</span><small>81</small></a>
+            <a href="Medical.html"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg><span>Medical Devices</span><small>65</small></a>
+            <a href="Pharmaceutical.html"><svg class="ico" aria-hidden="true"><use href="#i-pill"/></svg><span>Pharmaceutical Machinery</span><small>46</small></a>
+            <a href="Petroleum.html"><svg class="ico" aria-hidden="true"><use href="#i-fuel"/></svg><span>Petroleum Testing</span><small>46</small></a>
+            <a href="Testing.html"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg><span>Testing Equipment</span><small>77</small></a>
+            <a href="Chemical%20%26%20Consumables.html"><svg class="ico" aria-hidden="true"><use href="#i-droplet"/></svg><span>Chemicals & Consumables</span><small>23</small></a>
+            </div>
+          </li>
+          <li><a class="nav__link" href="#services">Services</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <a class="btn btn--ghost btn--sm" href="#contact">
+            Request a quote <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+          <button class="nav__toggle" id="navToggle" type="button"
+                  aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+            <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero__media">
+          <div class="hero__slide is-active" style="background-image:url(&quot;images/analysis-2030265_1280.jpg&quot;)"></div>
+          <div class="hero__slide" style="background-image:url(&quot;images/trnava-university-_9xRHrMOjeg-unsplash.jpg&quot;)"></div>
+          <div class="hero__slide" style="background-image:url(&quot;images/pexels-ivan-samkov-9628799.jpg&quot;)"></div>
+          <div class="hero__slide" style="background-image:url(&quot;images/lab-217043_1280.jpg&quot;)"></div>
+          <div class="hero__slide" style="background-image:url(&quot;images/testing.jpg&quot;)"></div>
+        </div>
+        <div class="hero__scrim"></div>
+        <div class="hero__grain"></div>
+
+        <div class="hero__inner shell">
+          <p class="hero__badge">
+            <b>Sri Lanka</b> Bernatali Inventions (Pvt) Ltd &middot; Ragama
+          </p>
+
+          <h1 class="display-1">
+            Precision instruments for laboratories that <em>cannot compromise.</em>
+          </h1>
+
+          <p class="lead hero__lead">
+            Laboratory, analytical, medical, pharmaceutical and industrial testing equipment —
+            supplied, maintained and calibrated, with the chemicals, consumables and training
+            that keep the work moving.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#contact">
+              Request a quote <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#solutions">
+              Browse the catalogue <svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>
+            </a>
+          </div>
+
+          <dl class="hero__stats">
+            <div class="hero__stat"><dt>438</dt><dd>Products catalogued</dd></div>
+            <div class="hero__stat"><dt>07</dt><dd>Specialist divisions</dd></div>
+            <div class="hero__stat"><dt>06</dt><dd>Service disciplines</dd></div>
+            <div class="hero__stat"><dt>Ragama</dt><dd>Sri Lanka base</dd></div>
+          </dl>
+        </div>
+      </section>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <a class="ticker__item" href="Laboratory.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg>Laboratory Equipment</a>
+          <a class="ticker__item" href="Analytical.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Analytical Instruments</a>
+          <a class="ticker__item" href="Medical.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg>Medical Devices</a>
+          <a class="ticker__item" href="Pharmaceutical.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-pill"/></svg>Pharmaceutical Machinery</a>
+          <a class="ticker__item" href="Petroleum.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-fuel"/></svg>Petroleum Testing</a>
+          <a class="ticker__item" href="Testing.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg>Testing Equipment</a>
+          <a class="ticker__item" href="Chemical%20%26%20Consumables.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-droplet"/></svg>Chemicals & Consumables</a>
+          <a class="ticker__item" href="Laboratory.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg>Laboratory Equipment</a>
+          <a class="ticker__item" href="Analytical.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Analytical Instruments</a>
+          <a class="ticker__item" href="Medical.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg>Medical Devices</a>
+          <a class="ticker__item" href="Pharmaceutical.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-pill"/></svg>Pharmaceutical Machinery</a>
+          <a class="ticker__item" href="Petroleum.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-fuel"/></svg>Petroleum Testing</a>
+          <a class="ticker__item" href="Testing.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg>Testing Equipment</a>
+          <a class="ticker__item" href="Chemical%20%26%20Consumables.html" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-droplet"/></svg>Chemicals & Consumables</a>
+        </div>
+      </div>
+
+      <section class="section" id="solutions">
+        <div class="glow glow--violet" style="width:520px;height:520px;top:-120px;left:-180px"></div>
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Our solutions</p>
+            <h2 class="display-2">Seven divisions, one accountable supplier.</h2>
+            <p class="lead">
+              Every category below is a live catalogue you can search by name or letter —
+              438 products in total, and far more we source to order.
+            </p>
+          </div>
+
+          <div class="cat-grid">
+            <a class="cat-card" href="Laboratory.html" data-reveal>
+              <img class="cat-card__img" src="images/laboratory-563423_1280.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="cat-card__top">
+                <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span>
+                <span class="cat-card__count">100 products</span>
+              </div>
+              <h3>Laboratory Equipment</h3>
+              <p>Autoclaves, fume hoods, incubators, centrifuges and the bench infrastructure a working lab runs on.</p>
+              <span class="cat-card__go">Explore catalogue
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </span>
+            </a>
+            <a class="cat-card" href="Analytical.html" data-reveal>
+              <img class="cat-card__img" src="images/analysis-2030265_1280.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="cat-card__top">
+                <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span>
+                <span class="cat-card__count">81 products</span>
+              </div>
+              <h3>Analytical Instruments</h3>
+              <p>Spectrophotometers, chromatography, particle sizing and elemental analysis for measurable answers.</p>
+              <span class="cat-card__go">Explore catalogue
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </span>
+            </a>
+            <a class="cat-card" href="Medical.html" data-reveal>
+              <img class="cat-card__img" src="images/pexels-tara-winstead-7722927.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="cat-card__top">
+                <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-pulse"/></svg></span>
+                <span class="cat-card__count">65 products</span>
+              </div>
+              <h3>Medical Devices</h3>
+              <p>Blood bank cold chain, haematology and diagnostic analysers for clinical settings.</p>
+              <span class="cat-card__go">Explore catalogue
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </span>
+            </a>
+            <a class="cat-card" href="Pharmaceutical.html" data-reveal>
+              <img class="cat-card__img" src="images/pharmaceutical-technician-sterile-environment-working-with-equipment-pharmacy-industry_645730-342.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="cat-card__top">
+                <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-pill"/></svg></span>
+                <span class="cat-card__count">46 products</span>
+              </div>
+              <h3>Pharmaceutical Machinery</h3>
+              <p>Tablet presses, coating pans, filling lines and the QC testers that keep a batch compliant.</p>
+              <span class="cat-card__go">Explore catalogue
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </span>
+            </a>
+            <a class="cat-card" href="Petroleum.html" data-reveal>
+              <img class="cat-card__img" src="images/pexels-ivan-samkov-9629696.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="cat-card__top">
+                <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-fuel"/></svg></span>
+                <span class="cat-card__count">46 products</span>
+              </div>
+              <h3>Petroleum Testing</h3>
+              <p>Octane, viscosity, distillation, flash point and oxidation stability testing to standard.</p>
+              <span class="cat-card__go">Explore catalogue
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </span>
+            </a>
+            <a class="cat-card" href="Testing.html" data-reveal>
+              <img class="cat-card__img" src="images/testing.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="cat-card__top">
+                <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+                <span class="cat-card__count">77 products</span>
+              </div>
+              <h3>Testing Equipment</h3>
+              <p>Environmental chambers and material testing for paper, plastics, rubber, soil and textiles.</p>
+              <span class="cat-card__go">Explore catalogue
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </span>
+            </a>
+            <a class="cat-card" href="Chemical%20%26%20Consumables.html" data-reveal>
+              <img class="cat-card__img" src="images/laboratory-glassware-arrangement-high-angle_23-2149481707.jpg" alt="" loading="lazy" decoding="async" />
+              <div class="cat-card__top">
+                <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-droplet"/></svg></span>
+                <span class="cat-card__count">23 products</span>
+              </div>
+              <h3>Chemicals & Consumables</h3>
+              <p>Specialty chemicals, HPLC and LCMS solvents, quartz ware, filters and everyday lab consumables.</p>
+              <span class="cat-card__go">Explore catalogue
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="services">
+        <img class="band__bg" src="images/indra-projects-L1ip8dEWuzE-unsplash.jpg" alt="" loading="lazy" decoding="async" />
+        <div class="shell">
+          <div class="section-head section-head--center" data-reveal>
+            <p class="eyebrow eyebrow--center">What we do</p>
+            <h2 class="display-2">We don’t just deliver the instrument.</h2>
+            <p class="lead">
+              At Bernatali Inventions we guarantee precision, efficiency and hassle-free lab
+              operations. Our services boost performance, ensure compliance and sharpen the
+              skills of the people using the equipment.
+            </p>
+          </div>
+
+          <div class="grid-auto">
+            <article class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">01</span>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg></span>
+              <h3>Equipment supply</h3>
+              <p>Advanced, reliable instruments and technologies, specified against your application, throughput and budget rather than a catalogue page.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">02</span>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+              <h3>Maintenance &amp; after-sales</h3>
+              <p>After-sales service that keeps instruments performing long after installation, protecting the value of what you invested in.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">03</span>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-gauge"/></svg></span>
+              <h3>Calibration &amp; compliance</h3>
+              <p>Calibration that holds equipment inside specification and keeps your laboratory ready for audit and accreditation.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">04</span>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-graduation"/></svg></span>
+              <h3>Practical training</h3>
+              <p>Hands-on training that sharpens operator skill, reduces avoidable error and gets more out of the instruments already on your bench.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">05</span>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-droplet"/></svg></span>
+              <h3>Chemicals &amp; consumables</h3>
+              <p>High-purity chemicals and the consumables a laboratory reorders every month, supplied with consistency and care.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">06</span>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-blueprint"/></svg></span>
+              <h3>Laboratory design</h3>
+              <p>Modern, efficient and safe laboratory spaces, planned around how your team actually moves through the work.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="glow glow--emerald" style="width:460px;height:460px;top:20%;right:-200px"></div>
+        <div class="shell">
+          <div class="split">
+            <div data-reveal>
+              <p class="eyebrow">Our vision</p>
+              <h2 class="display-2" style="margin-top:1.1rem">
+                A trusted partner in <em>scientific innovation.</em>
+              </h2>
+              <p class="lead" style="margin-top:1.25rem">
+                To deliver high-quality laboratory solutions that empower research, education
+                and industry — with reliable instruments, expert support and lab environments
+                built to work in.
+              </p>
+              <div class="quote-line">
+                We are committed to building lasting partnerships through integrity, expertise
+                and a relentless focus on customer satisfaction.
+              </div>
+            </div>
+            <div class="split__media" data-reveal>
+              <img src="images/trnava-university-_9xRHrMOjeg-unsplash.jpg"
+                   alt="Researchers working at a laboratory bench" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="shell">
+          <div class="split split--reverse">
+            <div data-reveal>
+              <p class="eyebrow">Our mission</p>
+              <h2 class="display-2" style="margin-top:1.1rem">How we support scientific progress.</h2>
+              <ul class="check-list">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+                  Providing advanced, reliable laboratory instruments and technologies</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+                  Delivering exceptional after-sales service that ensures long-term value and performance</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+                  Supplying high-purity chemicals and essential lab consumables with consistency and care</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+                  Designing modern, efficient and safe laboratory spaces tailored to our clients’ needs</li>
+              </ul>
+            </div>
+            <div class="split__media" data-reveal>
+              <img src="images/louis-reed-pwcKF7L4-no-unsplash.jpg"
+                   alt="Laboratory instrumentation in use" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="careers">
+        <img class="band__bg" src="images/pexels-karolina-grabowska-4021781.jpg" alt="" loading="lazy" decoding="async" />
+        <div class="shell">
+          <div class="section-head section-head--center" data-reveal>
+            <p class="eyebrow eyebrow--center">Careers &amp; culture</p>
+            <h2 class="display-2">Our people are the foundation of our success.</h2>
+            <p class="lead">
+              We are committed to a workplace where integrity, professionalism and respect define
+              how we operate — internally, and with our clients and partners.
+            </p>
+          </div>
+
+          <div class="grid-auto">
+            <article class="card" data-reveal>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <h3>Integrity first</h3>
+              <p>Integrity and ethics sit at the heart of everything we do. We hold to the highest standards of conduct, fully aligned with legal, regulatory and industry best practice, and expect every team member to act with honesty, fairness and responsibility.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-sprout"/></svg></span>
+              <h3>A culture of growth</h3>
+              <p>We foster an inclusive, supportive environment where every employee is empowered to grow, learn and thrive. Clear policies and open communication ensure fair treatment and equal opportunity for all, free from discrimination or bias.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg></span>
+              <h3>Empowering excellence</h3>
+              <p>We invest in our people through meaningful development opportunities, professional training and mentorship. Individual achievement is recognised and celebrated, and it compounds into collective success.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <h3>Our people</h3>
+              <p>Our people are essential to our success. We are committed to a workplace where everyone has the support and resources to excel, and where the same standards apply to everyone.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="icon-chip"><svg class="ico" aria-hidden="true"><use href="#i-trend"/></svg></span>
+              <h3>Growth &amp; recognition</h3>
+              <p>We help employees develop their skills and reach their potential, with recognition and reward for achievement at both personal and company level.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="shell">
+          <div class="cta" data-reveal>
+            <p class="eyebrow eyebrow--center">Contact</p>
+            <h2 class="display-2">Tell us what your lab needs.</h2>
+            <p class="lead">
+              Send us the specification, the standard you work to, or simply the problem you are
+              trying to solve. We will come back with options, lead times and a price.
+            </p>
+            <div class="cta__actions">
+              <a class="btn btn--primary" href="mailto:sales@bernatali.com?subject=Enquiry%20via%20bninventions.com">
+                Email our team <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </a>
+              <a class="btn btn--ghost" href="https://wa.me/94771804337" target="_blank" rel="noopener">
+                Chat on WhatsApp <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              </a>
+            </div>
+            <div class="cta__meta">
+              <a href="tel:+94771804337"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>+94 77 180 4337</a>
+              <a href="mailto:sales@bernatali.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>sales@bernatali.com</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=No+547+Kreedapitiya+Mavatha+Tewatte+Road+Ragama+11010+Sri+Lanka" target="_blank" rel="noopener">
+                <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>No. 547 Kreedapitiya Mavatha, Tewatte Road, Ragama 11010, Sri Lanka
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a class="brand" href="index.html" aria-label="BN Inventions — home">
+          <img class="brand__mark" src="images/logo-mark.png" alt="" width="42" height="42" />
+          <span class="brand__name"><b>BN Inventions</b><span>Bernatali (Pvt) Ltd</span></span>
         </a>
+            <p>
+              Bernatali Inventions (Pvt) Ltd supplies laboratory, analytical, medical and
+              industrial testing equipment across Sri Lanka — backed by maintenance,
+              calibration, consumables and hands-on training.
+            </p>
+            <div class="socials">
+              <a href="https://wa.me/94771804337" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
+                <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              </a>
+              <a href="mailto:sales@bernatali.com" aria-label="Email us">
+                <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+              </a>
+              <a href="tel:+94771804337" aria-label="Call us">
+                <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+              </a>
+            </div>
+          </div>
 
-        <button
-          class="mobile-menu-btn"
-          id="mobileMenuBtn"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul class="footer-list">
+              <li><a href="index.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Home</a></li>
+              <li><a href="#solutions"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Solutions</a></li>
+              <li><a href="#services"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Services</a></li>
+              <li><a href="#about"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>About &amp; careers</a></li>
+              <li><a href="#contact"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Contact</a></li>
+            </ul>
+          </div>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home" class="active">Home</a></li>
-          <li class="has-dropdown">
-            <a href="#products">Services</a>
-            <ul class="dropdown">
-              <li><a href="Laboratory.html">Laboratory Equipment</a></li>
-              <li><a href="Analytical.html">Analytical Instruments</a></li>
-              <li><a href="Medical.html">Medical Devices</a></li>
-              <li><a href="Pharmaceutical.html">Pharmaceutical Tools</a></li>
-              <li><a href="Petroleum.html">Petroleum Equipment</a></li>
-              <li><a href="Testing.html">Testing Equipment</a></li>
+          <div class="footer-col">
+            <h4>Catalogue</h4>
+            <ul class="footer-list">
+            <li><a href="Laboratory.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Laboratory Equipment</a></li>
+            <li><a href="Analytical.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Analytical Instruments</a></li>
+            <li><a href="Medical.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Medical Devices</a></li>
+            <li><a href="Pharmaceutical.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Pharmaceutical Machinery</a></li>
+            <li><a href="Petroleum.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Petroleum Testing</a></li>
+            <li><a href="Testing.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Testing Equipment</a></li>
+            <li><a href="Chemical%20%26%20Consumables.html"><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>Chemicals & Consumables</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Get in touch</h4>
+            <ul class="footer-list">
               <li>
-                <a href="Chemical & Consumables.html">Chemical & Consumables</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=No+547+Kreedapitiya+Mavatha+Tewatte+Road+Ragama+11010+Sri+Lanka" target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>No. 547 Kreedapitiya Mavatha, Tewatte Road, Ragama 11010, Sri Lanka
+                </a>
+              </li>
+              <li>
+                <a href="mailto:sales@bernatali.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>sales@bernatali.com</a>
+              </li>
+              <li>
+                <a href="tel:+94771804337"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>+94 77 180 4337</a>
+              </li>
+              <li>
+                <a href="https://wa.me/94771804337" target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us
+                </a>
               </li>
             </ul>
-          </li>
-          <li><a href="#careers">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-bg-slider">
-        <div
-          class="slide active"
-          style="background-image: url('images/analysis-2030265_1280.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/lab-217043_1280.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/pexels-ivan-samkov-9628799.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/scientist-2141259_1280.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/testing.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="
-            background-image: url('images/trnava-university-_9xRHrMOjeg-unsplash.jpg');
-          "
-        ></div>
-      </div>
-
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <h2>Precision Lab Equipment & Professional Lab Services</h2>
-
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">
-            Get a Free Quote <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="#portfolio" class="btn btn-secondary">
-            View Our Services <i class="fas fa-eye"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Solutions Marquee Section with Clickable Categories -->
-    <section class="solutions-marquee">
-      <div class="marquee-container">
-        <div class="marquee-track">
-          <!-- New Categories with Links -->
-          <a href="Analytical.html" class="marquee-item">
-            <i class="fas fa-chart-line"></i>
-            <span>Analytical Equipment</span>
-          </a>
-          <a href="Laboratory.html" class="marquee-item">
-            <i class="fas fa-flask"></i>
-            <span>Laboratory Equipment</span>
-          </a>
-          <a href="Medical.html" class="marquee-item">
-            <i class="fas fa-medkit"></i>
-            <span>Medical Equipment</span>
-          </a>
-          <a href="Petroleum.html" class="marquee-item">
-            <i class="fas fa-gas-pump"></i>
-            <span>Petroleum Equipment</span>
-          </a>
-          <a href="Pharmaceutical.html" class="marquee-item">
-            <i class="fas fa-pills"></i>
-            <span>Pharmaceutical Equipment</span>
-          </a>
-          <a href="Testing.html" class="marquee-item">
-            <i class="fas fa-check-double"></i>
-            <span>Testing Equipment</span>
-          </a>
-          <a href="Analytical.html" class="marquee-item">
-            <i class="fas fa-chart-line"></i>
-            <span>Analytical Equipment</span>
-          </a>
-          <a href="Laboratory.html" class="marquee-item">
-            <i class="fas fa-flask"></i>
-            <span>Laboratory Equipment</span>
-          </a>
-          <a href="Medical.html" class="marquee-item">
-            <i class="fas fa-medkit"></i>
-            <span>Medical Equipment</span>
-          </a>
-          <a href="Petroleum.html" class="marquee-item">
-            <i class="fas fa-gas-pump"></i>
-            <span>Petroleum Equipment</span>
-          </a>
-          <a href="Pharmaceutical.html" class="marquee-item">
-            <i class="fas fa-pills"></i>
-            <span>Pharmaceutical Equipment</span>
-          </a>
-          <a href="Testing.html" class="marquee-item">
-            <i class="fas fa-check-double"></i>
-            <span>Testing Equipment</span>
-          </a>
-          <a href="Analytical.html" class="marquee-item">
-            <i class="fas fa-chart-line"></i>
-            <span>Analytical Equipment</span>
-          </a>
-          <a href="Laboratory.html" class="marquee-item">
-            <i class="fas fa-flask"></i>
-            <span>Laboratory Equipment</span>
-          </a>
-          <a href="Medical.html" class="marquee-item">
-            <i class="fas fa-medkit"></i>
-            <span>Medical Equipment</span>
-          </a>
-          <a href="Petroleum.html" class="marquee-item">
-            <i class="fas fa-gas-pump"></i>
-            <span>Petroleum Equipment</span>
-          </a>
-          <a href="Pharmaceutical.html" class="marquee-item">
-            <i class="fas fa-pills"></i>
-            <span>Pharmaceutical Equipment</span>
-          </a>
-          <a href="Testing.html" class="marquee-item">
-            <i class="fas fa-check-double"></i>
-            <span>Testing Equipment</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Updated Marquee Styling for Clickable Items */
-      .solutions-marquee {
-        background: linear-gradient(
-          145deg,
-          var(--secondary),
-          var(--primary-dark)
-        );
-        padding: 1rem 0;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .marquee-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .marquee-track {
-        display: flex;
-        width: max-content;
-        animation: scroll 30s linear infinite;
-        will-change: transform;
-      }
-
-      .marquee-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 2rem;
-        color: var(--white);
-        font-weight: 500;
-        font-size: 1.1rem;
-        white-space: nowrap;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .marquee-item:hover {
-        transform: scale(1.05);
-        color: var(--accent-light);
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .marquee-item i {
-        font-size: 1.5rem;
-        color: var(--accent-light);
-        transition: color 0.3s ease;
-      }
-
-      .marquee-item:hover i {
-        color: var(--white);
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      .marquee-container:hover .marquee-track {
-        animation-play-state: paused;
-      }
-
-      /* Responsive Adjustments */
-      @media (max-width: 768px) {
-        .marquee-item {
-          padding: 0.8rem 1.5rem;
-          font-size: 1rem;
-        }
-        .marquee-item i {
-          font-size: 1.2rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .marquee-item {
-          padding: 0.6rem 1rem;
-          font-size: 0.9rem;
-        }
-      }
-    </style>
-
-    <script>
-      // Enhanced click handling with animation pause
-      document.addEventListener("DOMContentLoaded", function () {
-        const marqueeContainer = document.querySelector(".marquee-container");
-        const marqueeTrack = document.querySelector(".marquee-track");
-
-        // Pause animation on hover
-        marqueeContainer.addEventListener("mouseenter", function () {
-          marqueeTrack.style.animationPlayState = "paused";
-        });
-
-        marqueeContainer.addEventListener("mouseleave", function () {
-          marqueeTrack.style.animationPlayState = "running";
-        });
-
-        // Add click effect to items
-        const marqueeItems = document.querySelectorAll(".marquee-item");
-        marqueeItems.forEach((item) => {
-          item.addEventListener("click", function (e) {
-            // Add click feedback
-            this.style.transform = "scale(0.95)";
-            setTimeout(() => {
-              this.style.transform = "scale(1.05)";
-            }, 100);
-
-            // Note: The actual navigation will happen naturally via the anchor tag
-          });
-        });
-      });
-    </script>
-
-    <!-- Our Products Section - Two Row Layout with Background -->
-    <section id="products" class="products-two-row-style">
-      <div class="section-container">
-        <div class="lab-products-header">
-          <h3>OUR SOLUTIONS</h3>
-        </div>
-
-        <div class="products-two-row-container">
-          <!-- First Row -->
-          <div class="product-row">
-            <div class="product-circle">
-              <div class="circle-content">
-                <img
-                  src="images/pexels-photo-3938022.webp"
-                  alt="Analytical Equipment"
-                  class="circle-image"
-                />
-                <span class="product-name">Analytical Equipment</span>
-              </div>
-            </div>
-            <div class="product-circle">
-              <div class="circle-content">
-                <img
-                  src="images/pexels-tara-winstead-7722927.jpg"
-                  alt="Laboratory Equipment"
-                  class="circle-image"
-                />
-                <span class="product-name">Laboratory Equipment</span>
-              </div>
-            </div>
-            <div class="product-circle">
-              <div class="circle-content">
-                <img
-                  src="images/pexels-photo-287237.jpeg"
-                  alt="Medical Equipment"
-                  class="circle-image"
-                />
-                <span class="product-name">Medical Equipment</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Second Row -->
-          <div class="product-row">
-            <div class="product-circle">
-              <div class="circle-content">
-                <img
-                  src="images/laboratory-glassware-arrangement-high-angle_23-2149481707.jpg"
-                  alt="Petroleum Testing"
-                  class="circle-image"
-                />
-                <span class="product-name">Petroleum Testing</span>
-              </div>
-            </div>
-            <div class="product-circle">
-              <div class="circle-content">
-                <img
-                  src="images/pharmaceutical-technician-sterile-environment-working-with-equipment-pharmacy-industry_645730-342.jpg"
-                  alt="Pharmaceutical Machinery"
-                  class="circle-image"
-                />
-                <span class="product-name">Pharmaceutical Machinery</span>
-              </div>
-            </div>
-            <div class="product-circle">
-              <div class="circle-content">
-                <img
-                  src="images/testing.jpg"
-                  alt="Testing Equipment"
-                  class="circle-image"
-                />
-                <span class="product-name">Testing Equipment</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Images inside circles */
-      .circle-image {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-      }
-
-      .circle-content {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        overflow: hidden;
-      }
-
-      /* Text is always visible */
-      .product-name {
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-weight: 700;
-        color: white;
-        font-size: 1rem;
-        z-index: 2;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-        opacity: 0.8; /* visible by default */
-        transition: opacity 0.5s ease, transform 0.3s ease;
-      }
-
-      /* On hover, fade in stronger */
-      .product-circle:hover .product-name {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.05);
-      }
-
-      /* Section background */
-      .products-two-row-style {
-        margin-top: -18px;
-        padding: 6rem 0;
-        position: relative;
-        overflow: hidden;
-        background-image: url("images/testalize-me-0jE8ynV4mis-unsplash.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-      }
-
-      .products-two-row-style::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 0;
-      }
-
-      .section-container {
-        position: relative;
-        z-index: 1;
-      }
-
-      .lab-products-header {
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-
-      .lab-products-header h2 {
-        font-size: 10rem;
-        color: white;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-
-      .lab-products-header h3 {
-        font-size: 4rem;
-        color: white;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-
-      .products-two-row-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .product-row {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        width: 100%;
-      }
-
-      .product-circle {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-        position: relative;
-        z-index: 1;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: 2px solid transparent;
-      }
-
-      .product-circle::before {
-        content: "";
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        border: 2px dashed rgba(144, 198, 124, 0.7);
-        opacity: 0;
-        transition: all 0.4s ease;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .product-circle:hover {
-        transform: scale(1.15);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-        background: #90c67c;
-        border-color: rgba(255, 255, 255, 0.3);
-      }
-
-      .product-circle:hover::before {
-        opacity: 1;
-        animation: spin 12s linear infinite;
-      }
-
-      @keyframes spin {
-        from {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-        to {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 1200px) {
-        .product-row {
-          gap: 2.5rem;
-        }
-        .product-circle {
-          width: 200px;
-          height: 200px;
-        }
-        .product-circle::before {
-          width: 220px;
-          height: 220px;
-        }
-      }
-
-      @media (max-width: 992px) {
-        .product-row {
-          gap: 2rem;
-        }
-        .product-circle {
-          width: 160px;
-          height: 160px;
-        }
-        .product-circle::before {
-          width: 180px;
-          height: 180px;
-        }
-        .product-name {
-          font-size: 0.9rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .product-row {
-          gap: 1.5rem;
-        }
-        .product-circle {
-          width: 140px;
-          height: 140px;
-        }
-        .product-circle::before {
-          width: 160px;
-          height: 160px;
-        }
-        .product-name {
-          font-size: 0.8rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .products-two-row-container {
-          gap: 1rem;
-        }
-        .product-row {
-          gap: 1rem;
-        }
-        .product-circle {
-          width: 110px;
-          height: 110px;
-        }
-        .product-circle::before {
-          width: 130px;
-          height: 130px;
-        }
-        .product-name {
-          font-size: 0.7rem;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .product-row {
-          gap: 0.5rem;
-        }
-        .product-circle {
-          width: 90px;
-          height: 90px;
-        }
-        .product-circle::before {
-          width: 110px;
-          height: 110px;
-        }
-        .product-name {
-          font-size: 0.6rem;
-        }
-      }
-    </style>
-
-    <!-- our services-->
-    <section class="portfolio" id="portfolio">
-      <div class="section-container">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-description">
-          Maintaining Peak Efficiency in Laboratory Work At Bernatali Inventions
-          (Pvt) Ltd, we don't just provide scientific products—we guarantee
-          precision, efficiency, and hassle-free lab operations. Our expert
-          services include equipment maintenance, calibration, and practical
-          training to boost performance, ensure compliance, and sharpen user
-          skills.
-        </p>
-      </div>
-    </section>
-
-    <!-- Careers Section -->
-    <section id="careers" class="careers">
-      <div class="section-container">
-        <h2 class="section-title">Careers at Bernatali Inventions</h2>
-        <div class="careers-content">
-          <p class="section-description">
-            At Bernatali Inventions, we believe that our people are the
-            foundation of our success. We are committed to creating a workplace
-            where integrity, professionalism, and respect define how we
-            operate—both internally and with our clients and partners.
-          </p>
-
-          <div class="values-grid">
-            <!-- Our Values -->
-            <div class="value-card" data-aos="fade-up">
-              <div class="value-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <h3>Our Values</h3>
-              <p>
-                Integrity and ethics are at the heart of everything we do. We
-                uphold the highest standards of conduct, fully aligned with
-                legal, regulatory, and industry best practices. We expect every
-                team member to act with honesty, fairness, and responsibility.
-              </p>
-            </div>
-
-            <!-- Culture of Growth -->
-            <div class="value-card" data-aos="fade-up" data-aos-delay="100">
-              <div class="value-icon">
-                <i class="fas fa-seedling"></i>
-              </div>
-              <h3>A Culture of Growth</h3>
-              <p>
-                We foster an inclusive and supportive environment where every
-                employee is empowered to grow, learn, and thrive. Through clear
-                policies and open communication, we ensure fair treatment and
-                equal opportunities for all—free from discrimination or bias.
-              </p>
-            </div>
-
-            <!-- Empowering Excellence -->
-            <div class="value-card" data-aos="fade-up" data-aos-delay="200">
-              <div class="value-icon">
-                <i class="fas fa-medal"></i>
-              </div>
-              <h3>Empowering Excellence</h3>
-              <p>
-                We invest in our people by offering meaningful development
-                opportunities, professional training, and mentorship. Individual
-                achievements are recognized and celebrated, contributing not
-                only to personal growth but also to our collective success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vision & Mission Section -->
-    <section id="vision-mission" class="vision-mission">
-      <div class="section-container">
-        <div class="vision-mission-grid">
-          <!-- Vision -->
-          <div class="vm-card" data-aos="fade-right">
-            <h2 class="section-title">Our Vision</h2>
-            <div class="vm-content">
-              <p>
-                To become a trusted partner in scientific innovation by
-                delivering high-quality laboratory solutions, empowering
-                research, education, and industry with reliable instruments,
-                expert support, and innovative lab environments.
-              </p>
-            </div>
-          </div>
-
-          <!-- Mission -->
-          <div class="vm-card" data-aos="fade-left">
-            <h2 class="section-title">Our Mission</h2>
-            <div class="vm-content">
-              <p>
-                At BerNatali Inventions, our mission is to support scientific
-                progress by:
-              </p>
-              <ul class="mission-list">
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Providing advanced, reliable laboratory instruments and
-                  technologies
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Delivering exceptional after-sales service that ensures
-                  long-term value and performance
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Supplying high-purity chemicals and essential lab consumables
-                  with consistency and care
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i>
-                  Designing modern, efficient, and safe laboratory spaces
-                  tailored to our clients' needs
-                </li>
-              </ul>
-              <p class="mission-conclusion">
-                We are committed to building lasting partnerships through
-                integrity, expertise, and a relentless focus on customer
-                satisfaction.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Careers Section with Background Image */
-      .careers {
-        position: relative;
-        padding: 6rem 2rem;
-        background-image: url("images/testing.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-      }
-
-      .careers::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 0;
-      }
-
-      .careers .section-container {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* Section Header Styling */
-      .careers .section-title {
-        color: var(--white);
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .careers .section-description {
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 800px;
-        margin: 1rem auto 3rem;
-      }
-
-      /* Values Grid - Maintain original card styling */
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .value-card {
-        background: var(--white);
-        border-radius: var(--border-radius);
-        padding: 2rem;
-        box-shadow: var(--shadow-lg);
-        transition: var(--transition);
-        border-top: 4px solid var(--primary);
-      }
-
-      .value-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .value-icon {
-        font-size: 2rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-      }
-
-      .value-card h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .value-card p {
-        color: var(--text-dark);
-      }
-
-      /* Vision & Mission Section (unchanged) */
-      .vision-mission {
-        background: var(--gray-light);
-        padding: 6rem 2rem;
-      }
-
-      .vision-mission-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-      }
-
-      .vm-card {
-        background: var(--white);
-        border-radius: var(--border-radius);
-        padding: 2.5rem;
-        box-shadow: var(--shadow-sm);
-        position: relative;
-      }
-
-      .vm-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 0;
-        background: linear-gradient(to bottom, var(--primary), var(--accent));
-        transition: var(--transition);
-        z-index: -1;
-      }
-
-      .vm-card:hover::before {
-        height: 100%;
-        width: 100%;
-        opacity: 0.1;
-      }
-
-      .mission-list {
-        margin: 1.5rem 0;
-        list-style: none;
-      }
-
-      .mission-list li {
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-
-      .mission-list i {
-        color: var(--accent);
-        margin-top: 0.25rem;
-      }
-
-      .mission-conclusion {
-        font-weight: 500;
-        color: var(--primary-dark);
-      }
-
-      /* Responsive Adjustments */
-      @media (max-width: 992px) {
-        .vision-mission-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .careers,
-        .vision-mission {
-          padding: 4rem 1.5rem;
-          background-attachment: scroll;
-        }
-
-        .value-card,
-        .vm-card {
-          padding: 1.5rem;
-        }
-
-        .careers .section-description {
-          margin-bottom: 2rem;
-        }
-      }
-    </style>
-
-    <!-- Careers Section -->
-    <section id="careers" class="careers-section">
-      <div class="section-container">
-        <div class="careers-content">
-          <div class="careers-intro">
-            <div class="careers-highlight">
-              <div
-                class="highlight-card"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div class="highlight-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <h3>Our People</h3>
-                <p>
-                  Our people are essential to our success. We're committed to
-                  fostering a work environment where everyone has the support
-                  and resources to excel. Through clear policies, we ensure fair
-                  treatment and equal opportunity for all, without bias.
-                </p>
-              </div>
-
-              <div
-                class="highlight-card"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="highlight-icon">
-                  <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Growth & Recognition</h3>
-                <p>
-                  We're dedicated to helping employees develop their skills and
-                  reach their potential, with recognition and rewards for
-                  achievements at both personal and corporate levels.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Careers Section with Background Image */
-      .careers-section {
-        padding: 6rem 2rem;
-        position: relative;
-        background-image: url("images/earth-3289810_1920.jpg"); /* Add your image path */
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: var(--white);
-      }
-
-      .careers-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-        z-index: 0;
-      }
-
-      .careers-section .section-container {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* Text styling for dark background */
-      .careers-section .section-title,
-      .careers-section .breadcrumb {
-        color: var(--white);
-      }
-
-      .careers-section .breadcrumb .divider {
-        color: var(--white);
-        opacity: 0.7;
-      }
-
-      /* Card styling adjustments */
-      .intro-card,
-      .highlight-card,
-      .careers-meta,
-      .careers-cta {
-        background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
-        color: var(--text-dark);
-      }
-
-      /* Maintain original card text colors */
-      .highlight-card h3,
-      .highlight-icon,
-      .meta-label {
-        color: var(--primary);
-      }
-
-      .meta-value {
-        color: var(--text-light);
-      }
-
-      /* Add this to your existing CSS */
-      .intro-card,
-      .highlight-card,
-      .careers-cta,
-      .careers-meta {
-        color: var(--primary); /* This makes all text inside cards green */
-      }
-
-      /* But keep these elements their original colors */
-      .highlight-card h3,
-      .highlight-icon,
-      .meta-label {
-        color: var(--primary); /* Already green - no change needed */
-      }
-
-      .meta-value {
-        color: var(--text-light); /* Keep meta values light */
-      }
-
-      .careers-cta p {
-        color: var(--primary); /* Make CTA paragraph text green */
-      }
-
-      /* For specific text like "Our people are essential..." */
-      .intro-card p {
-        color: var(
-          --primary
-        ); /* Makes all paragraph text in intro cards green */
-      }
-
-      /* Original card styles (unchanged) */
-      .breadcrumb {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .careers-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 3rem;
-        margin-top: 2rem;
-      }
-
-      .careers-intro {
-        flex: 2;
-        min-width: 300px;
-      }
-
-      .intro-card {
-        padding: 2rem;
-        border-radius: var(--border-radius);
-        margin-bottom: 2rem;
-        border-left: 4px solid var(--primary);
-        transition: var(--transition);
-      }
-
-      .intro-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .careers-highlight {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .highlight-card {
-        padding: 2rem;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .highlight-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 0;
-        background: linear-gradient(to bottom, var(--primary), var(--accent));
-        transition: var(--transition);
-        z-index: 1;
-      }
-
-      .highlight-card:hover::before {
-        height: 100%;
-        width: 100%;
-        opacity: 0.1;
-      }
-
-      .highlight-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .highlight-icon {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .highlight-card h3 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .careers-cta {
-        width: 100%;
-        padding: 2.5rem;
-        border-radius: var(--border-radius);
-        text-align: center;
-        margin-top: 2rem;
-      }
-
-      .careers-cta p {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-      }
-
-      .careers-meta {
-        flex: 1;
-        min-width: 250px;
-        padding: 2rem;
-        border-radius: var(--border-radius);
-        align-self: flex-start;
-        border-top: 4px solid var(--secondary);
-      }
-
-      .meta-item {
-        margin-bottom: 1.5rem;
-      }
-
-      .meta-label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-        font-size: 0.9rem;
-      }
-
-      .meta-value {
-        font-size: 0.95rem;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 992px) {
-        .careers-content {
-          flex-direction: column;
-        }
-
-        .careers-meta {
-          width: 100%;
-          margin-top: 2rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .careers-section {
-          padding: 4rem 1.5rem;
-          background-attachment: scroll;
-        }
-
-        .highlight-card {
-          padding: 1.5rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .careers-cta p {
-          font-size: 1.1rem;
-        }
-      }
-    </style>
-
-    
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3>BN Inventions</h3>
-          <p>
-            Creating sustainable digital experiences that help businesses grow
-            while minimizing environmental impact.
-          </p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
 
-        <div class="footer-col">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
-            </li>
-            <li>
-              <a href="#services"
-                ><i class="fas fa-chevron-right"></i> Services</a
-              >
-            </li>
-            <li>
-              <a href="#portfolio"
-                ><i class="fas fa-chevron-right"></i> Portfolio</a
-              >
-            </li>
-            <li>
-              <a href="#contact"
-                ><i class="fas fa-chevron-right"></i> Contact</a
-              >
-            </li>
-          </ul>
+        <div class="footer-bottom">
+          <p>&copy; <span data-year>2025</span> Bernatali Inventions (Pvt) Ltd. All rights reserved.</p>
+          <p>Ragama, Sri Lanka</p>
+          <p class="credit">Designed and developed by <b>TRISH (PVT) LTD</b></p>
         </div>
-
-        <div class="footer-col">
-          <h3>Services</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> General Laboratory
-                Equipment</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Analytical Instruments</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Life Sciences &
-                Biotechnology Instruments</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Material Testing &
-                Physical Properties Instruments</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Environmental & Industrial
-                Testing Instruments</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Sample Preparation
-                Instruments</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Contact Info</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#">
-                <i class="fas fa-map-marker-alt"></i> No: 547 Kreedapitiya
-                Mavatha. Tewatte Road, Ragama 11010, Sri Lanka
-              </a>
-            </li>
-            <li>
-              <a href="mailto:tharaka@bernatali.com">
-                <i class="fas fa-envelope"></i> sales@bernatali.com
-              </a>
-            </li>
-            <li></li>
-            <li>
-              <a href="tel:+1234567890">
-                <i class="fas fa-phone"></i> +94 77 180 4337
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2025 BNInventions</p>
       </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-      <i class="fas fa-arrow-up"></i>
+    <div class="dock">
+      <a class="dock__btn dock__btn--wa" href="https://wa.me/94771804337" target="_blank" rel="noopener"
+         aria-label="Chat with us on WhatsApp">
+        <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+      </a>
+      <button class="dock__btn dock__btn--top" type="button" aria-label="Back to top">
+        <svg class="ico" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+      </button>
     </div>
-
-    <!-- Scripts -->
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const slides = document.querySelectorAll(".hero-bg-slider .slide");
-        let current = 0;
-
-        setInterval(() => {
-          slides[current].classList.remove("active");
-          current = (current + 1) % slides.length;
-          slides[current].classList.add("active");
-        }, 5000); // Change slide every 5 seconds
-      });
-    </script>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      // Initialize AOS (Animate On Scroll)
-      AOS.init({
-        duration: 800,
-        easing: "ease-in-out",
-        once: true,
-        offset: 100,
-      });
-
-      // Mobile Menu Toggle
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const navLinks = document.getElementById("navLinks");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
-          ? '<i class="fas fa-times"></i>'
-          : '<i class="fas fa-bars"></i>';
-      });
-
-      // Close mobile menu when clicking a link
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("show");
-          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-      });
-
-      // Header scroll effect
-      const header = document.getElementById("header");
-      let lastScroll = 0;
-
-      window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll <= 0) {
-          header.classList.remove("scrolled");
-          header.classList.remove("hidden");
-          return;
-        }
-
-        if (
-          currentScroll > lastScroll &&
-          !header.classList.contains("hidden")
-        ) {
-          // Scroll down
-          header.classList.add("hidden");
-        } else if (
-          currentScroll < lastScroll &&
-          header.classList.contains("hidden")
-        ) {
-          // Scroll up
-          header.classList.remove("hidden");
-        }
-
-        if (currentScroll > 100) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-
-        lastScroll = currentScroll;
-      });
-
-      // Back to top button
-      const backToTopBtn = document.getElementById("backToTop");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          backToTopBtn.classList.add("active");
-        } else {
-          backToTopBtn.classList.remove("active");
-        }
-      });
-
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Form submission
-      const contactForm = document.getElementById("contactForm");
-
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-
-        // Simulate form submission
-        submitBtn.innerHTML = "Sending...";
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-          submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-
-          setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            contactForm.reset();
-          }, 2000);
-        }, 1500);
-      });
-
-      // Active link highlighting
-      const sections = document.querySelectorAll("section");
-      const navItems = document.querySelectorAll(".nav-links a");
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-
-          if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navItems.forEach((item) => {
-          item.classList.remove("active");
-          if (item.getAttribute("href") === `#${current}`) {
-            item.classList.add("active");
-          }
-        });
-      });
-    </script>
+    <script src="assets/js/site.js" defer></script>
   </body>
 </html>
